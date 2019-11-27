@@ -77,7 +77,7 @@ function monsterClosetToTheTower(Tower, monsters){
 function monsterMove(Player, Parcours, monsters, towers, speed) {
 	var monsterMove = setInterval(function(){
 
-		course(Parcours, monsters);
+		course(Parcours, monsters,Player);
 
 		// On lance les vérifications pour attaquer ou non les monstres
 		for (var i = 0; i < towers.length; i++) {
