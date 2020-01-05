@@ -77,7 +77,7 @@ function monsterClosetToTheTower(Tower, monsters){
 function monsterMove(Player, Parcours, monsters, towers, speed) {
 	var monsterMove = setInterval(function(){
 
-		course(Parcours, monsters,Player);
+		course(Parcours, monsters, Player);
 
 		// On lance les vérifications pour attaquer ou non les monstres
 		for (var i = 0; i < towers.length; i++) {
@@ -103,6 +103,8 @@ function monsterMove(Player, Parcours, monsters, towers, speed) {
 			$('.infos span.level').fadeOut('slow', function() {
 				$(this).text(Player.level);
 			}).fadeIn();
+			// On lance la prochaine wave
+			startGame(Player, Parcours, monsters, towers);
 		}
 	}, speed);
 }

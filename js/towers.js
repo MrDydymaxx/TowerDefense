@@ -15,20 +15,22 @@ function towersAvailable() {
 		sizeX: 60,
 		sizeY: 60,
 		damage: 0.20,
+		slow: 1,
 	};
 	towersAvailable.push(ClassicTower);
 
-	var WaterTower = {
+	var IceTower = {
 		dist : 150,
-		type : 'Water',
-		img  : 'resources/water-tower.png',
+		type : 'Ice',
+		img  : 'resources/Ice-tower.png',
 		time : 400,
 		money: 40,
 		sizeX: 60,
 		sizeY: 60,
-		damage: 0.25,
+		damage: 0.10,
+		slow: 0.70,
 	};
-	towersAvailable.push(WaterTower);
+	towersAvailable.push(IceTower);
 
 	var FireTower = {
 		dist : 200,
@@ -39,6 +41,7 @@ function towersAvailable() {
 		sizeX: 60,
 		sizeY: 60,
 		damage: 1,
+		slow: 1,
 	};
 	towersAvailable.push(FireTower);
 
@@ -195,7 +198,7 @@ function makeTowers(towers,Player) {
 }
 
 // classe "Tower" qui crée une tour
-function Tower (top, left, dist, type, img, time, money, damage, sizeX = 60, sizeY = 60) {
+function Tower (top, left, dist, type, img, time, money, damage, slow, sizeX = 60, sizeY = 60) {
 	this.top       = top;
 	this.left      = left;
 	this.sizeX     = sizeX;
@@ -210,6 +213,7 @@ function Tower (top, left, dist, type, img, time, money, damage, sizeX = 60, siz
 	this.time      = time;
 	this.money     = money;
 	this.damage    = damage;
+	this.slow      = slow;
 	this.canAttack = false;
 	this.DOM       = false;
 	this.monsterTarget = null;

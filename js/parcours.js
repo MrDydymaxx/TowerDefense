@@ -143,6 +143,19 @@ function course(Parcours, monsters,Player) {
 			// On supprime le montre du tableau des monstres
 			monsters.splice(i,1);
 			Player.life--;
+			// On retire des vies au joueur ou on lui affiche game over
+			if (Player.life <= 0 ) {
+				$('.infos span.life').fadeOut('fast', function() {
+					$(this).text(0);
+				}).fadeIn();
+				alert("GAME OVER !");
+			}
+			else
+			{
+				$('.infos span.life').fadeOut('fast', function() {
+					$(this).text(Player.life);
+				}).fadeIn();
+			}
 		}
 
 	}
