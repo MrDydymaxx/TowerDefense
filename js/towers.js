@@ -22,7 +22,7 @@ function towersAvailable() {
 	var IceTower = {
 		dist : 150,
 		type : 'Ice',
-		img  : 'resources/Ice-tower.png',
+		img  : 'resources/ice-tower.png',
 		time : 400,
 		money: 40,
 		sizeX: 60,
@@ -152,7 +152,7 @@ function makeTowers(towers,Player) {
 			if (canCreate == true) {
 
 				// On crée une nouvelle tour
-				var newTower = new Tower(top, left, TowerSelected.dist, TowerSelected.type, TowerSelected.img, TowerSelected.time, TowerSelected.money, TowerSelected.damage);
+				var newTower = new Tower(top, left, TowerSelected.dist, TowerSelected.type, TowerSelected.img, TowerSelected.time, TowerSelected.money, TowerSelected.damage, TowerSelected.slow);
 				// On l'ajoute au tableau des tours
 				towers.push(newTower);
 
@@ -217,6 +217,7 @@ function Tower (top, left, dist, type, img, time, money, damage, slow, sizeX = 6
 	this.canAttack = false;
 	this.DOM       = false;
 	this.monsterTarget = null;
+	this.previousTarget = null;
 
 	if ((this.top-this.dist)>0) {
 		this.minTop = this.top - this.dist - 60;

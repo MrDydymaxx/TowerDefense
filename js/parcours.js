@@ -70,7 +70,7 @@ function calculSizeCourse(Parcours) {
 }
 
 // Fonction qui déplace les monstres
-function course(Parcours, monsters,Player) {
+function course(Parcours, monsters,Player, towers) {
 
 	// On déplace tous les monstres en fonction du parcours de 1px
 	for (var i = 0, c = monsters.length; i < c; i++) {
@@ -84,47 +84,47 @@ function course(Parcours, monsters,Player) {
 				// SI le monstre doit descendre
 				case "down":
 					if (monsters[i].topTemp < Parcours.course[monsters[i].cStep][1]) {
-						monsters[i].topTemp++;
-						monsters[i].top++;
+						monsters[i].topTemp+= monsters[i].speed;
+						monsters[i].top+= monsters[i].speed;
 						monsters[i].moveUpDown();
 					}
 					else {
 						monsters[i].topTemp = 0;
-						monsters[i].cStep++;
+						monsters[i].cStep+= monsters[i].speed;
 					}
 					break;
 				
 				// SI le monstre doit aller à droite
 				case "up":
 					if (monsters[i].topTemp < Parcours.course[monsters[i].cStep][1]) {
-						monsters[i].topTemp++;
-						monsters[i].top--;
+						monsters[i].topTemp+=monsters[i].speed;
+						monsters[i].top-=monsters[i].speed;
 						monsters[i].moveUpDown();
 					}
 					else {
 						monsters[i].topTemp = 0;
-						monsters[i].cStep++;
+						monsters[i].cStep+=monsters[i].speed;
 					}
 					break;
 
 				// SI le monstre doit aller à droite
 				case "right":
 					if (monsters[i].leftTemp < Parcours.course[monsters[i].cStep][1]) {
-						monsters[i].leftTemp++;
-						monsters[i].left++;
+						monsters[i].leftTemp+=monsters[i].speed;
+						monsters[i].left+=monsters[i].speed;
 						monsters[i].moveLeftRight();
 					}
 					else {
 						monsters[i].leftTemp = 0;
-						monsters[i].cStep++;
+						monsters[i].cStep+=monsters[i].speed;
 					}
 					break;
 
 				// SI le monstre doit aller à gauche
 				case "left":
 					if (monsters[i].leftTemp < Parcours.course[monsters[i].cStep][1]) {
-						monsters[i].leftTemp++;
-						monsters[i].left--;
+						monsters[i].leftTemp+=monsters[i].speed;
+						monsters[i].left-=monsters[i].speed;
 						monsters[i].moveLeftRight();
 					}
 					else {
