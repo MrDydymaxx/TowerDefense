@@ -65,18 +65,17 @@ function monsterClosetToTheTower(Tower, monsters){
 			// Si la distance est inférieur on définit la nouvelle cible
 			if (hypo < distMin) {
 				distMin = hypo;
-				if (Tower.monsterTarget != null)
-				{
-					Tower.previousTarget = Tower.monsterTarget;
+				Tower.previousTarget = Tower.monsterTarget;
+				console.log(Tower.previousTarget);
+				if (Tower.previousTarget) {
 					Tower.previousTarget.speed = Tower.previousTarget.baseSpeed;
-					console.log(Tower.previousTarget);
 				}
 				Tower.monsterTarget = monsters[i];
 				if (Tower.type == "Ice") {
 					//On ralentit le monstre
 					Tower.monsterTarget.speed = Tower.monsterTarget.speed*Tower.slow;
+					console.log(Tower.monsterTarget.speed);
 				}
-				
 			}
 		}
 	}
