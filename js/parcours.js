@@ -70,7 +70,7 @@ function calculSizeCourse(Parcours) {
 }
 
 // Fonction qui déplace les monstres
-function course(Parcours, monsters) {
+function course(Parcours, monsters,Player) {
 
 	// On déplace tous les monstres en fonction du parcours de 1px
 	for (var i = 0, c = monsters.length; i < c; i++) {
@@ -140,9 +140,22 @@ function course(Parcours, monsters) {
 			$(monsters[i].DOM).fadeOut('slow',function(){
 				$(this).remove();
 			});
-
 			// On supprime le montre du tableau des monstres
 			monsters.splice(i,1);
+			Player.life--;
+			// On retire des vies au joueur ou on lui affiche game over
+			if (Player.life <= 0 ) {
+				$('.infos span.life').fadeOut('fast', function() {
+					$(this).text(0);
+				}).fadeIn();
+				alert("GAME OVER !");
+			}
+			else
+			{
+				$('.infos span.life').fadeOut('fast', function() {
+					$(this).text(Player.life);
+				}).fadeIn();
+			}
 		}
 
 	}
