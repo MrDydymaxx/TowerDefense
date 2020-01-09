@@ -6,9 +6,9 @@
 function towersAvailable() {
 	var towersAvailable = [];
 
-	var ClassicTower = {
+	var BasicPanda = {
 		dist : 100,
-		type : 'Classic',
+		type : 'Basique',
 		img  : 'resources/Images/Tours/panda-basique.svg',
 		time : 100,
 		money: 20,
@@ -17,11 +17,11 @@ function towersAvailable() {
 		damage: 3,
 		slow: 1,
 	};
-	towersAvailable.push(ClassicTower);
+	towersAvailable.push(BasicPanda);
 
-	var IceTower = {
+	var WaterPanda = {
 		dist : 150,
-		type : 'Ice',
+		type : 'Bombe à eau',
 		img  : 'resources/Images/Tours/panda-eau.svg',
 		time : 400,
 		money: 40,
@@ -30,11 +30,11 @@ function towersAvailable() {
 		damage: 1,
 		slow: 0.80,
 	};
-	towersAvailable.push(IceTower);
+	towersAvailable.push(WaterPanda);
 
-	var FireTower = {
+	var DartPanda = {
 		dist : 200,
-		type : 'Fire',
+		type : 'Sarbacane',
 		img  : 'resources/Images/Tours/panda-sarbacane.svg',
 		time : 2000,
 		money: 60,
@@ -43,7 +43,22 @@ function towersAvailable() {
 		damage: 10,
 		slow: 1,
 	};
-	towersAvailable.push(FireTower);
+	towersAvailable.push(DartPanda);
+
+	var SuperPanda = {
+		dist : 200,
+		type : 'Super',
+		img  : 'resources/Images/Tours/panda-super.svg',
+		time : 2000,
+		money: 60,
+		sizeX: 60,
+		sizeY: 60,
+		damage: 10,
+		slow: 1,
+	};
+	towersAvailable.push(SuperPanda);
+
+
 
 	return towersAvailable;
 }

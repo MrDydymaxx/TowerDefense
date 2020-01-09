@@ -66,10 +66,15 @@ function monsterClosetToTheTower(Tower, monsters){
 			if (hypo < distMin) {
 				distMin = hypo;
 				Tower.monsterTarget = monsters[i];
-					if (Tower.type == "Ice") {
+					if (Tower.type == "Bombe à eau") {
 					//On ralentit le monstre
 					Tower.monsterTarget.speed = Tower.monsterTarget.speed*Tower.slow;
-					$(Tower.monsterTarget.DOM).addClass("slow");
+					slowImg = $(Tower.monsterTarget.DOM).find('img').attr("src");
+					slowTab = slowImg.split(".");
+					if (slowTab[1]!="gif"){
+						slowImg = slowTab[0]+"-froid.gif";
+						$(Tower.monsterTarget.DOM).find('img').attr("src",slowImg);
+					}
 				}
 			}
 		}

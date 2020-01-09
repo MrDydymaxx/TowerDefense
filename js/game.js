@@ -80,10 +80,16 @@ function makeMonsters(monsters, Parcours, Player) {
 	var MonsterToCreate;
 
 	// On crée l'ensemble des monstres que l'on stocke dans un tableau
-	for (var i = 0, max = 5; i < max; i++) {
-		// On crée un monstre
-		MonsterToCreate = new Monster(-100*(i+1), Parcours.start, Player.level*1000, i+1, 10*Player.level, 'https://cdn0.iconfinder.com/data/icons/Favorite_monsters/256/pink.png',1);
+	if (Player.level % 10 == 0) {
+		MonsterToCreate = new Monster(-100, Parcours.start, Player.level*20000,"boss", 100*Player.level,'resources/Images/Monstres/homme-businessman.svg',1);
 		monsters.push(MonsterToCreate);
+	}
+	else {
+	for (var i = 0, max = 3; i < max; i++) {
+		// On crée un monstre
+		MonsterToCreate = new Monster(-100*(i+1), Parcours.start, Player.level*1000, i+1, 10*Player.level, 'resources/Images/Monstres/homme-torche.svg',1);
+		monsters.push(MonsterToCreate);
+		}
 	}
 }
 
@@ -128,6 +134,3 @@ function calcHypotenuse(a, b) {
 function hpPourcent (hp, hpMax) {
 	return parseInt(hp * 100 / hpMax);
 }
-
-
-
