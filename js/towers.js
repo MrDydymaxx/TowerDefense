@@ -9,7 +9,7 @@ function towersAvailable() {
 	var ClassicTower = {
 		dist : 100,
 		type : 'Classic',
-		img  : 'resources/tower.png',
+		img  : 'resources/Images/Tours/panda-basique.svg',
 		time : 100,
 		money: 20,
 		sizeX: 60,
@@ -22,7 +22,7 @@ function towersAvailable() {
 	var IceTower = {
 		dist : 150,
 		type : 'Ice',
-		img  : 'resources/Ice-tower.png',
+		img  : 'resources/Images/Tours/panda-eau.svg',
 		time : 400,
 		money: 40,
 		sizeX: 60,
@@ -35,7 +35,7 @@ function towersAvailable() {
 	var FireTower = {
 		dist : 200,
 		type : 'Fire',
-		img  : 'resources/fire-tower.png',
+		img  : 'resources/Images/Tours/panda-sarbacane.svg',
 		time : 2000,
 		money: 60,
 		sizeX: 60,
