@@ -15,108 +15,191 @@
   <body>
 
 <!-- Page accueil --> 
-  	<div class="container accueil text-center">
+  	<div class="container-fluid accueil text-center">
   		<div class="col-md-12">
-  			<div class="accueil">
-  				<div class="row">
-  					<div class="col-md-12">
-						<!-- Logo -->
-	  					<img src="" alt=''>
-	  					<!-- Title -->
-	  					<h1>PandaWar</h1>
-  					</div>
-  				<div class="row">
-  					<div class="col-md-12">
-	  					<!-- Nom créateurs -->
-	  					<h4>Créé par Annaïk LE GALL, Dylan LADERRIERE, Sophie SENECAL et Walid OUBAIDALLAH</h4>
-	  				</div>
-					<div class="row">
-	  					<!-- Description du jeu -->
-	  					<p>TowerDenfense avec des pandas blablalb faut remplir</p>
-	  				</div>
+  			<div class="row">
+  				<div class="col-md-12">
+					<!-- Logo -->
+	  				<img src="" alt=''>
+	 				<!-- Title -->
+	  				<h1>PandaWar</h1>
   				</div>
-  				<div class="row">
-					<div class="col-md-12">
-	  					<!-- Pseudo du joueur --> 
-	  					<form action="????.php">
-						  Pseudo : <input type="text" name="pseudo"><br>
-						  
-						</form>
-					</div>
-  				<div class="row">
-					<div class="col-md-12">
-	  					<!-- Choix du niveau -->
-	  					Difficulty Level : 
-	  					<div class="btn-group btn-group-toggle" data-toggle="buttons">
-						  <label class="btn btn-outline-light active">
-						    <input type="radio" name="options" id="option1" autocomplete="off" checked> Nooby Mode
-						  </label>
-						  <label class="btn btn-outline-light">
-						    <input type="radio" name="options" id="option2" autocomplete="off"> Chill Mode
-						  </label>
-						  <label class="btn btn-outline-light">
-						    <input type="radio" name="options" id="option3" autocomplete="off"> Hardcore Mode
-						  </label>
-						</div>
-					</div>
-  					<div class="row">
-  						<div class="col-md-12">
-  							<!-- Infos suivant la difficulté -->
-  							<div class="col-md-3">Max lives :<span class="maxlife">20</span> life</div>
-							<div class="col-md-3">Start Money : <span class="money">3</span><img src="https://cdn3.iconfinder.com/data/icons/shopping-and-retail-15/512/gemstone-512.png" alt="Diamond" class="diamond img-fluid"></div>
-							<div class="col-md-3">Monster speed :<span class="monsterspeed">1</span>x</div>
-  						</div>
-  					</div>
-  				</div>
+  			</div>
+  			<div class="row">
+  				<div class="col-md-12">
+	  				<!-- Nom créateurs -->
+	  				<h4>Créé par Annaïk LE GALL, Dylan LADERRIERE, Sophie SENECAL et Walid OUBAIDALLAH</h4>
+				</div>
+				<div class="offset-md-2 col-md-8 offset-md-2 ">
+	  				<!-- Description du jeu -->
+					<p>Une tribu de panda, souhaitent à tout prix défendre leur territoire et faire perdurer leur règne. Cette fois-ci, ils seront confrontés à une terrible menace, encore jamais connue. Une organisation souhaite assiéger le lieu afin de le déforester et y construire une usine à sucre.<br>
+	  				Une grande bataille aura lieu en ce jour !<br>
 
-  				<div class="row">
-  					<div class="col-md-12">
-  						<div class="offset-md-4 col-md-4 offset-md-4 ">
-		  					<!-- Bouton validé -->
-		  					<input type="button" class="btn btn-outline-light btn-lg" value="FIGHT !">
+					Les Panda règneront-ils une fois de plus ? À vous de décider du sort qui leur appartient !</p>
+	  			</div>
+  			</div>
+  	<!-- Pseudo du joueur --> 
+  			<div class="row">
+				<div class="col-md-12">
+	  				<form action="????.php">
+						 Pseudo : <input type="text" name="pseudo"><br>
+					</form>
+				</div>
+			</div>
+	<!-- Choix du niveau -->
+  			<div class="row">
+				<div class="col-md-12">
+	  				Niveau de difficulté : 
+	  				<div class="btn-group btn-group-toggle" data-toggle="buttons">
+						<label class="btn btn-outline-light active">
+							<input type="radio" name="options" id="option1" autocomplete="off" checked>Nooby Mode
+						</label>
+						<label class="btn btn-outline-light">
+						    <input type="radio" name="options" id="option2" autocomplete="off">Chill Mode
+						</label>
+						<label class="btn btn-outline-light">
+						    <input type="radio" name="options" id="option3" autocomplete="off">Hardcore Mode
+						</label>
+					</div>
+				</div>
+			</div>
+	<!-- Infos suivant la difficulté -->
+  			<div class="row">
+  					<div class="col-md-4">Vies Max : <span class="maxlife">20</span> vies</div>
+					<div class="col-md-4">Bambous de départ : <span class="money">3</span><img src="" alt="" class=""></div>
+					<div class="col-md-4">Vitesse des monstres : <span class="levelmonsterspeed">1</span>x</div>
+  			</div>
+  	<!-- Bouton validé -->
+  			<div class="row">
+  				<div class="col-md-12">
+  					<div class="offset-md-4 col-md-4 offset-md-4 ">
+		  				<input type="button" class="btn btn-outline-light btn-lg" value="FIGHT !">
 		  					<!--<input type="image" src="img_submit.gif" alt="Submit">-->
-		  				</div>
-  					</div>
+		  			</div>
   				</div>
-
-  				<div class="row">
-  					<div class="col-md-12">
-						<h3>Towers and monsters you can encounter on your journey to PandaWar</h3>
-  					</div>				
-  					<div class="col-md-5">
-  						<!-- Descriptions des tours--> 
-  						<div class="col-md-2">
-  							<img src="" alt=''>
-  							<img src="" alt=''>
-  						</div>
-  						<div class="offset-md-1 col-md-2">
-  							<img src="" alt=''>
-  							<img src="" alt=''>
-  						</div>
-  						<div class="offset-md-1 col-md-2">
-  							<img src="" alt=''>
-  							<img src="" alt=''>
-  						</div>
-  						<div class="offset-md-1 col-md-3">
-  							<img src="" alt=''>
-  						</div>
-  					</div>
-  					<div class="col-md-2">
-  						<h1>VS</h1>
-  					</div>
-  					<div class="col-md-5">
-  						<!-- Descriptions des monstres--> 
-  						<div class="col-md-5">
-  							<img src="" alt=''>
-  							<img src="" alt=''>
-  						</div>
-  						<div class="offset-md-2 col-md-5">
-  							<img src="" alt=''>
-  							<img src="" alt=''>
-  						</div>
-  					</div>
+  			</div>
+	<!-- Descriptions des tours et monstres-->
+  			<div class="row">
+  				<div class="col-md-12">
+					<h3>Tours et Monstres que vous pouvez rencontrer lors de votre bataille</h3>
   				</div>
-  				
+  			</div>
+  			<div class="row">		
+	  			<div class="col-md-5">
+	  				<!-- Descriptions des tours--> 
+	  				<div class="row">
+		  				<div class="col-md-2">
+		  					<div class="row">
+		  						<div class="col-md-12"><img src="resources/builder.png" alt=''></div>
+		  						<div class="col-md-12">Time : <span class="maxlife">2</span>s</div>
+		  						<div class="col-md-12">Dégats : <span class="maxlife">100</span></div>
+								<div class="col-md-12"> Coûts : <span class="money">30</span><img src="" alt="" class=""></div>
+								<div class="col-md-12">Spé : <span class="levelmonsterspeed">Ultra</span></div>
+		  					</div>
+		  					<div class="row">
+		  						<div class="col-md-12"><img src="resources/builder.png" alt=''></div>
+		  					</div>
+		  					<div class="row">
+		  						<div class="col-md-12"><img src="resources/builder.png" alt=''></div>
+		  						<div class="col-md-12">Time : <span class="maxlife">2</span>s</div>
+		  						<div class="col-md-12">Dégats : <span class="maxlife">100</span></div>
+								<div class="col-md-12"> Coûts : <span class="money">30</span><img src="" alt="" class=""></div>
+								<div class="col-md-12">Spé : <span class="levelmonsterspeed">Ultra</span></div>
+		  					</div>
+	  					</div>
+	  					<div class="offset-md-1 col-md-2">
+	  						<div class="row">
+		  						<div class="col-md-12"><img src="resources/builder.png" alt=''></div>
+		  						<div class="col-md-12">Time : <span class="maxlife">2</span>s</div>
+		  						<div class="col-md-12">Dégats : <span class="maxlife">100</span></div>
+								<div class="col-md-12"> Coûts : <span class="money">30</span><img src="" alt="" class=""></div>
+								<div class="col-md-12">Spé : <span class="levelmonsterspeed">Ultra</span></div>
+		  					</div>
+		  					<div class="row">
+		  						<div class="col-md-12"><img src="resources/builder.png" alt=''></div>
+		  					</div>
+		  					<div class="row">
+		  						<div class="col-md-12"><img src="resources/builder.png" alt=''></div>
+		  						<div class="col-md-12">Time : <span class="maxlife">2</span>s</div>
+		  						<div class="col-md-12">Dégats : <span class="maxlife">100</span></div>
+								<div class="col-md-12"> Coûts : <span class="money">30</span><img src="" alt="" class=""></div>
+								<div class="col-md-12">Spé : <span class="levelmonsterspeed">Ultra</span></div>
+		  					</div>
+	  					</div>
+	  					<div class="offset-md-1 col-md-2">
+	  						<div class="row">
+		  						<div class="col-md-12"><img src="resources/builder.png" alt=''></div>
+		  						<div class="col-md-12">Time : <span class="maxlife">2</span>s</div>
+		  						<div class="col-md-12">Dégats : <span class="maxlife">100</span></div>
+								<div class="col-md-12"> Coûts : <span class="money">30</span><img src="" alt="" class=""></div>
+								<div class="col-md-12">Spé : <span class="levelmonsterspeed">Ultra</span></div>
+		  					</div>
+		  					<div class="row">
+		  						<div class="col-md-12"><img src="resources/builder.png" alt=''></div>
+		  					</div>
+		  					<div class="row">
+		  						<div class="col-md-12"><img src="resources/builder.png" alt=''></div>
+		  						<div class="col-md-12">Time : <span class="maxlife">2</span>s</div>
+		  						<div class="col-md-12">Dégats : <span class="maxlife">100</span></div>
+								<div class="col-md-12"> Coûts : <span class="money">30</span><img src="" alt="" class=""></div>
+								<div class="col-md-12">Spé : <span class="levelmonsterspeed">Ultra</span></div>
+		  					</div>
+	  					</div>
+	  					<div class="offset-md-1 col-md-3 d-flex flex-column justify-content-center">
+  							<div class="row">
+	  							<div class="col-md-12">
+	  								<img src="resources/builder.png" alt=''>
+	  							</div>
+  							</div>
+  							<div class="row">
+		  						<div class="col-md-12">Time : <span class="maxlife">2</span>s</div>
+		  						<div class="col-md-12">Dégats : <span class="maxlife">100</span></div>
+								<div class="col-md-12"> Coûts : <span class="money">30</span><img src="" alt="" class=""></div>
+								<div class="col-md-12">Spé : <span class="levelmonsterspeed">Ultra</span></div>
+							<div>
+	  					</div>
+	  				</div>
+  				</div>
+  				<div class="col-md-2">
+  					<h1>VS</h1>
+  				</div>
+  				<div class="col-md-5">
+  					<div class="row">
+	  					<!-- Descriptions des monstres--> 
+	  					<div class="col-md-5">
+	  						<div class="row">
+		  						<div class="col-md-12"><img src="resources/builder.png" alt=''></div>
+		  						<div class="col-md-12">HP : <span class="maxlife">100</span></div>
+		  						<div class="col-md-12">Vitesse : <span class="maxlife">100</span></div>
+								<div class="col-md-12">Rapporte : <span class="money">30</span><img src="" alt="" class=""></div>
+								<div class="col-md-12">Spé : <span class="levelmonsterspeed">Ultra</span></div>
+		  					</div>
+		  					<div class="row">
+		  						<div class="col-md-12"><img src="resources/builder.png" alt=''></div>
+		  						<div class="col-md-12">HP : <span class="maxlife">100</span></div>
+								<div class="col-md-12">Vitesse : <span class="maxlife">100</span></div>
+								<div class="col-md-12">Rapporte : <span class="money">30</span><img src="" alt="" class=""></div>
+								<div class="col-md-12">Spé : <span class="levelmonsterspeed">Ultra</span></div>
+		  					</div>
+	  					</div>
+	  					<div class="offset-md-2 col-md-5">
+	  						<div class="row">
+		  						<div class="col-md-12"><img src="resources/builder.png" alt=''></div>
+		  						<div class="col-md-12">HP : <span class="maxlife">100</span></div>
+								<div class="col-md-12">Vitesse : <span class="maxlife">100</span></div>
+								<div class="col-md-12">Rapporte : <span class="money">30</span><img src="" alt="" class=""></div>
+								<div class="col-md-12">Spé : <span class="levelmonsterspeed">Ultra</span></div>
+		  					</div>
+		  					<div class="row">
+		  						<div class="col-md-12"><img src="resources/builder.png" alt=''></div>
+		  						<div class="col-md-12">HP : <span class="maxlife">100</span></div>
+								<div class="col-md-12">Vitesse : <span class="maxlife">100</span></div>
+								<div class="col-md-12">Rapporte : <span class="money">30</span><img src="" alt="" class=""></div>
+								<div class="col-md-12">Spé : <span class="levelmonsterspeed">Ultra</span></div>
+		  					</div>
+	  					</div>
+	  				</div>
+  				</div>
   			</div>
   		</div>
   	</div>
