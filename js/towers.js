@@ -9,36 +9,39 @@ function towersAvailable() {
 	var ClassicTower = {
 		dist : 100,
 		type : 'Classic',
-		img  : 'resources/tower.png',
+		img  : 'resources/Images/Tours/panda-basique.svg',
 		time : 100,
 		money: 20,
 		sizeX: 60,
 		sizeY: 60,
-		damage: 0.20,
+		damage: 3,
+		slow: 1,
 	};
 	towersAvailable.push(ClassicTower);
 
-	var WaterTower = {
+	var IceTower = {
 		dist : 150,
-		type : 'Water',
-		img  : 'resources/water-tower.png',
+		type : 'Ice',
+		img  : 'resources/Images/Tours/panda-eau.svg',
 		time : 400,
 		money: 40,
 		sizeX: 60,
 		sizeY: 60,
-		damage: 0.25,
+		damage: 1,
+		slow: 0.80,
 	};
-	towersAvailable.push(WaterTower);
+	towersAvailable.push(IceTower);
 
 	var FireTower = {
 		dist : 200,
 		type : 'Fire',
-		img  : 'resources/fire-tower.png',
+		img  : 'resources/Images/Tours/panda-sarbacane.svg',
 		time : 2000,
 		money: 60,
 		sizeX: 60,
 		sizeY: 60,
-		damage: 1,
+		damage: 10,
+		slow: 1,
 	};
 	towersAvailable.push(FireTower);
 
@@ -149,7 +152,7 @@ function makeTowers(towers,Player) {
 			if (canCreate == true) {
 
 				// On crée une nouvelle tour
-				var newTower = new Tower(top, left, TowerSelected.dist, TowerSelected.type, TowerSelected.img, TowerSelected.time, TowerSelected.money, TowerSelected.damage);
+				var newTower = new Tower(top, left, TowerSelected.dist, TowerSelected.type, TowerSelected.img, TowerSelected.time, TowerSelected.money, TowerSelected.damage, TowerSelected.slow);
 				// On l'ajoute au tableau des tours
 				towers.push(newTower);
 
@@ -195,7 +198,7 @@ function makeTowers(towers,Player) {
 }
 
 // classe "Tower" qui crée une tour
-function Tower (top, left, dist, type, img, time, money, damage, sizeX = 60, sizeY = 60) {
+function Tower (top, left, dist, type, img, time, money, damage, slow, sizeX = 60, sizeY = 60) {
 	this.top       = top;
 	this.left      = left;
 	this.sizeX     = sizeX;
@@ -210,9 +213,11 @@ function Tower (top, left, dist, type, img, time, money, damage, sizeX = 60, siz
 	this.time      = time;
 	this.money     = money;
 	this.damage    = damage;
+	this.slow      = slow;
 	this.canAttack = false;
 	this.DOM       = false;
 	this.monsterTarget = null;
+	this.previousTarget = null;
 
 	if ((this.top-this.dist)>0) {
 		this.minTop = this.top - this.dist - 60;

@@ -8,10 +8,11 @@ $(function() {
 	// Objet littéral qui stocke l'argent, les vies et la vitesse du jeu
 	var	Player = {
 			money: 600,
-			life : 20,
+			life : 5,
 			speed: 5, // 10 = fast; 50 = normal mode
-			time : 5, // time (in sec) before monsters move
+			time : 0, // time (in sec) before monsters move
 			level: 1,
+			bestScore :0,
 		}; 
 
 	/* ---------- ---------- */
@@ -20,12 +21,21 @@ $(function() {
 
 	// Objet littéral qui stocke le parcours des monstres
 	var	Parcours = {
-			start: 600, 
-			sizeCourse: 150,
+			start: 1000, 
+			sizeCourse: 75,
 			course: [
 				['down' ,200],
+				['left' ,300],
+				['up' ,150],
 				['left' ,400],
-				['down' ,500],
+				['down' ,100],
+				['left' ,200],
+				['down' ,300],
+				['right' ,400],
+				['up' ,100],
+				['right' ,300],
+				['down' ,200],
+				['right' ,500],
 			]
 		};
 
@@ -50,9 +60,6 @@ $(function() {
 
 	var	monsters = []; // Tableau qui stocke tous les monstres du jeu
 
-	// On appelle la fonction qui permet de créer des monstres
-	makeMonsters(monsters, Parcours);
-
 	/* ---------- ---------- */
 	/* ------- GAME -------- */
 	/* ---------- ---------- */
@@ -70,13 +77,17 @@ $(function() {
 // ----------------------
 
 // Fonction qui déclare les monstres à créer et les stocke dans le tableau des monstres
-function makeMonsters(monsters, Parcours) {
+function makeMonsters(monsters, Parcours, Player) {
 	var MonsterToCreate;
+	if (Player.life <= 0) {
+        Player.level--;
+        return;
+    }
 
 	// On crée l'ensemble des monstres que l'on stocke dans un tableau
 	for (var i = 0, max = 5; i < max; i++) {
 		// On crée un monstre
-		MonsterToCreate = new Monster(-100*(i+1), Parcours.start, (i+1)*100, 'Pikachu', 20, 'https://cdn0.iconfinder.com/data/icons/Favorite_monsters/256/pink.png');
+		MonsterToCreate = new Monster(-100*(i+1), Parcours.start, Player.level*1000, i+1, 10*Player.level, 'https://cdn0.iconfinder.com/data/icons/Favorite_monsters/256/pink.png',1);
 		monsters.push(MonsterToCreate);
 	}
 }
@@ -89,6 +100,9 @@ function startGame(Player, Parcours, monsters, towers) {
 	$('.infos span.money').text(Player.money);
 	$('.infos span.level').text(Player.level);
 
+	// On appelle la fonction qui permet de créer des monstres
+	makeMonsters(monsters, Parcours, Player);
+
 	// On lance le décompte
 	var timer = setInterval(function() {
 		$('.infos span.time').text(Player.time); // On change chaque seconde le temps restant
@@ -96,7 +110,17 @@ function startGame(Player, Parcours, monsters, towers) {
 
 			// On arrête le décompte
 			clearInterval(timer);
-
+			$(".fight").click(function(){
+					//On réinitialise le score
+					game.level = 0;
+					$("span.level").text("0");
+					//On réinitialise le temps
+					game.time =0;
+					//On relance le timer
+					startGame(game);
+					//On masque le lien Restart
+					$(this).fadeOut(1000);
+					});
 			// On lance le timer pour déplacer les monstres et attaquer
 			monsterMove(Player, Parcours, monsters, towers, Player.speed);
 		}

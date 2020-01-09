@@ -9,7 +9,7 @@ function makeCourse(Parcours) {
 	calculSizeCourse(Parcours);
 
 	var prevTop  = 0,
-		prevLeft = Parcours.start - 60; // On retire 60 afin de centrer le parcours sur les monstres
+		prevLeft = Parcours.start - 25; // On retire 60 afin de centrer le parcours sur les monstres
 
 	var html = '<div class="parcours" style="top:0px;">';
 
@@ -26,13 +26,12 @@ function makeCourse(Parcours) {
 				break;
 
 			case 'right':
-				html    += '<div style="height: ' + Parcours.sizeCourse + 'px; width: ' + (Parcours.course[i][1] + Parcours.sizeCourse) + 'px;top: ' + (prevTop - Parcours.sizeCourse/2 + 45) + 'px; left: ' + prevLeft + 'px;"></div>';
+				html    += '<div style="height: ' + Parcours.sizeCourse + 'px; width: ' + (Parcours.course[i][1] + Parcours.sizeCourse) + 'px;top: ' + (prevTop - Parcours.sizeCourse/2 + 35) + 'px; left: ' + prevLeft + 'px;"></div>';
 				prevLeft+= Parcours.course[i][1];
 				break;
 
 			case 'left':
-				html    += '<div style="height: ' + Parcours.sizeCourse + 'px; width: ' + (Parcours.course[i][1] + Parcours.sizeCourse) + 'px;top: ' + (prevTop - Parcours.sizeCourse/2 + 45) + 'px; left: ' + (prevLeft-Parcours.course[i][1]) + 'px;"></div>';
-				prevLeft-= Parcours.course[i][1];
+				html    += '<div style="height: ' + Parcours.sizeCourse + 'px; width: ' + (Parcours.course[i][1] + Parcours.sizeCourse) + 'px;top: ' + (prevTop - Parcours.sizeCourse/2 + 35) + 'px; left: ' + (prevLeft-Parcours.course[i][1]) + 'px;"></div>';				prevLeft-= Parcours.course[i][1];
 				break;
 		}
 	}
@@ -70,7 +69,7 @@ function calculSizeCourse(Parcours) {
 }
 
 // Fonction qui déplace les monstres
-function course(Parcours, monsters) {
+function course(Parcours, monsters,Player, towers) {
 
 	// On déplace tous les monstres en fonction du parcours de 1px
 	for (var i = 0, c = monsters.length; i < c; i++) {
@@ -84,8 +83,8 @@ function course(Parcours, monsters) {
 				// SI le monstre doit descendre
 				case "down":
 					if (monsters[i].topTemp < Parcours.course[monsters[i].cStep][1]) {
-						monsters[i].topTemp++;
-						monsters[i].top++;
+						monsters[i].topTemp+= monsters[i].speed;
+						monsters[i].top+= monsters[i].speed;
 						monsters[i].moveUpDown();
 					}
 					else {
@@ -97,8 +96,8 @@ function course(Parcours, monsters) {
 				// SI le monstre doit aller à droite
 				case "up":
 					if (monsters[i].topTemp < Parcours.course[monsters[i].cStep][1]) {
-						monsters[i].topTemp++;
-						monsters[i].top--;
+						monsters[i].topTemp+=monsters[i].speed;
+						monsters[i].top-=monsters[i].speed;
 						monsters[i].moveUpDown();
 					}
 					else {
@@ -110,8 +109,8 @@ function course(Parcours, monsters) {
 				// SI le monstre doit aller à droite
 				case "right":
 					if (monsters[i].leftTemp < Parcours.course[monsters[i].cStep][1]) {
-						monsters[i].leftTemp++;
-						monsters[i].left++;
+						monsters[i].leftTemp+=monsters[i].speed;
+						monsters[i].left+=monsters[i].speed;
 						monsters[i].moveLeftRight();
 					}
 					else {
@@ -123,8 +122,8 @@ function course(Parcours, monsters) {
 				// SI le monstre doit aller à gauche
 				case "left":
 					if (monsters[i].leftTemp < Parcours.course[monsters[i].cStep][1]) {
-						monsters[i].leftTemp++;
-						monsters[i].left--;
+						monsters[i].leftTemp+=monsters[i].speed;
+						monsters[i].left-=monsters[i].speed;
 						monsters[i].moveLeftRight();
 					}
 					else {
@@ -140,9 +139,39 @@ function course(Parcours, monsters) {
 			$(monsters[i].DOM).fadeOut('slow',function(){
 				$(this).remove();
 			});
-
 			// On supprime le montre du tableau des monstres
 			monsters.splice(i,1);
+			Player.life--;
+			// On retire des vies au joueur ou on lui affiche game over
+			if (Player.life <= 0 ) {
+				$('.infos span.life').fadeOut('fast', function() {
+					$(this).text(0);
+				}).fadeIn();
+				clearInterval(timer);
+				$(".GameOver").fadeIn(1000);
+
+				if(game.level > game.bestScore){
+					game.bestScore = game.level;
+					$(".bestScore").text(game.bestScore);
+				}
+				$(".recommencerbutton").click(function(){
+					//On réinitialise le score
+					game.level = 0;
+					$("span.level").text("0");
+					//On réinitialise le temps
+					game.time =0;
+					//On relance le timer
+					startGame(game);
+					//On masque le lien Restart
+					$(this).fadeOut(1000);
+					});
+			}
+			else
+			{
+				$('.infos span.life').fadeOut('fast', function() {
+					$(this).text(Player.life);
+				}).fadeIn();
+			}
 		}
 
 	}

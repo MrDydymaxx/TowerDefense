@@ -1,9 +1,11 @@
 body {
-	background-image: url("../resources/Images/background.jpg");
 }
 .accueil{
 	background-image: url("../resources/Images/background.jpg");
-
+}
+.GameOver{
+	background-image: url("../resources/Images/background.jpg");
+	visibility: hidden;
 }
 .NomJeu{
 	font-size: 4em;
@@ -18,6 +20,12 @@ body {
 }
 .image_accueil{
 	width: 10%;
+}
+.imageGameOver{
+	width: 10%;
+}
+.GameOvertitle{
+	font-size: 15em;
 }
 .game {
 	/*width: 2000px;*/
