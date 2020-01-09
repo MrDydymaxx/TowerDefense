@@ -39,8 +39,8 @@ body {
 }
 
 .game .tower img, .game .follow-tower img, .game .monster img {
-	width: 60px;
-	height: 60px;
+	width: 40px;
+	height: 40px;
 }
 
 .game .monster .progress-bar {
@@ -93,7 +93,7 @@ body {
 
 .game-constructor {
 	width: 100%;
-	height: 150px;
+	height: 130px;
 	position: fixed;
 	bottom: 0px;
 	background-color: rgba(255,255,255,0.9);
@@ -103,7 +103,7 @@ body {
 }
 
 .game-constructor .tower img.tower {
-	max-height: 70px;
+	max-height: 50px;
 }
 
 .game-constructor .tower img.diamond {
@@ -138,4 +138,9 @@ body {
 	left: 0px;
 	z-index: 3;
 	background: url('../resources/builder.png') no-repeat;
+}
+.slow {
+	background:#FFF;
+	opacity: 0.5;
+	filter:alpha(opacity=50); 
 }

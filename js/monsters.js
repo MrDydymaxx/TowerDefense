@@ -1,7 +1,6 @@
 // ----------------------
 // - FUNCTIONS MONSTERS -
 // ----------------------
-
 // Fonction qui permet aux tours d'attaquer les monstres 
 function monsterHitByTower(Tower,monsters,Player) {
 
@@ -10,7 +9,6 @@ function monsterHitByTower(Tower,monsters,Player) {
 		
 		// On retire des HP au monstre cible
 		Tower.monsterTarget.hp -= 1*Tower.damage;
-
 		// On change l'affichage de la barre de HP du monstre
 		$(Tower.monsterTarget.DOM).find('div.progress-bar').text(parseInt(Tower.monsterTarget.hp));
 		$(Tower.monsterTarget.DOM).find('div.progress-bar').css('width',hpPourcent(Tower.monsterTarget.hp, Tower.monsterTarget.hpMax) + '%');
@@ -68,6 +66,11 @@ function monsterClosetToTheTower(Tower, monsters){
 			if (hypo < distMin) {
 				distMin = hypo;
 				Tower.monsterTarget = monsters[i];
+					if (Tower.type == "Ice") {
+					//On ralentit le monstre
+					Tower.monsterTarget.speed = Tower.monsterTarget.speed*Tower.slow;
+					$(Tower.monsterTarget.DOM).addClass("slow");
+				}
 			}
 		}
 	}
@@ -77,14 +80,13 @@ function monsterClosetToTheTower(Tower, monsters){
 function monsterMove(Player, Parcours, monsters, towers, speed) {
 	var monsterMove = setInterval(function(){
 
-		course(Parcours, monsters);
+		course(Parcours, monsters, Player);
 
 		// On lance les vérifications pour attaquer ou non les monstres
 		for (var i = 0; i < towers.length; i++) {
 
 			// Si la tour a une cible :
 			if (towers[i].monsterTarget !== null) {
-				
 				// La tour attaque le monstre le plus proche
 				monsterHitByTower(towers[i],monsters,Player);
 			}
@@ -103,22 +105,26 @@ function monsterMove(Player, Parcours, monsters, towers, speed) {
 			$('.infos span.level').fadeOut('slow', function() {
 				$(this).text(Player.level);
 			}).fadeIn();
+			// On lance la prochaine wave
+			startGame(Player, Parcours, monsters, towers);
 		}
 	}, speed);
 }
 
 // Fonction qui crée un monstre
-function Monster (top,left,hp,name,money,img) {
-	this.top     = top;
-	this.topTemp = top;
-	this.left    = left;
-	this.leftTemp= 0;
-	this.hp      = hp;
-	this.name    = name;
-	this.money   = money;
-	this.img     = img;
-	this.hpMax   = hp;
-	this.cStep   = 0;
+function Monster (top,left,hp,name,money,img,speed) {
+	this.top       = top;
+	this.topTemp   = top;
+	this.left      = left;
+	this.leftTemp  = 0;
+	this.hp        = hp;
+	this.name      = name;
+	this.money     = money;
+	this.img       = img;
+	this.hpMax     = hp;
+	this.cStep     = 0;
+	this.baseSpeed = speed;
+	this.speed     = speed;
 
 	this.create = function() {
 		var html  = $('<div class="monster" style="top:' + this.top + 'px; left: ' + this.left + 'px;" data-hp="' + this.hp + '" data-name="' + this.name + '">' +
