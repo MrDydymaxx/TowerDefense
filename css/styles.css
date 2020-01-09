@@ -1,12 +1,13 @@
 body {
 	background-color: #43a40e;
 }
-
+.accueil{
+	background-image: url("resources/Background_accueil.svg");
+}
 .container-fluid {
 	margin: 0px;
 	padding: 0px;
 }
-
 .game {
 	/*width: 2000px;*/
 	/*height: 1500px;*/
