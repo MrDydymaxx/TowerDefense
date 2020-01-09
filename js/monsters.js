@@ -74,7 +74,7 @@ function monsterClosetToTheTower(Tower, monsters){
 				if (Tower.type == "Ice") {
 					//On ralentit le monstre
 					Tower.monsterTarget.speed = Tower.monsterTarget.speed*Tower.slow;
-					console.log(Tower.monsterTarget.speed);
+					setTimeout(function(){ Tower.monsterTarget.speed = Tower.monsterTarget.baseSpeed; },1500);
 				}
 			}
 		}
