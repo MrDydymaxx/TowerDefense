@@ -20,12 +20,21 @@ $(function() {
 
 	// Objet littéral qui stocke le parcours des monstres
 	var	Parcours = {
-			start: 600, 
-			sizeCourse: 150,
+			start: 1000, 
+			sizeCourse: 75,
 			course: [
 				['down' ,200],
+				['left' ,300],
+				['up' ,150],
 				['left' ,400],
-				['down' ,500],
+				['down' ,100],
+				['left' ,200],
+				['down' ,300],
+				['right' ,400],
+				['up' ,100],
+				['right' ,300],
+				['down' ,200],
+				['right' ,500],
 			]
 		};
 
