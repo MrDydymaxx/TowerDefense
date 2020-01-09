@@ -24,7 +24,7 @@ function towersAvailable() {
 		type : 'Bombe à eau',
 		img  : 'resources/Images/Tours/panda-eau.svg',
 		time : 400,
-		money: 40,
+		money: 100,
 		sizeX: 60,
 		sizeY: 60,
 		damage: 1,
@@ -33,14 +33,14 @@ function towersAvailable() {
 	towersAvailable.push(WaterPanda);
 
 	var DartPanda = {
-		dist : 200,
+		dist : 300,
 		type : 'Sarbacane',
 		img  : 'resources/Images/Tours/panda-sarbacane.svg',
 		time : 2000,
-		money: 60,
+		money: 200,
 		sizeX: 60,
 		sizeY: 60,
-		damage: 10,
+		damage: 5,
 		slow: 1,
 	};
 	towersAvailable.push(DartPanda);
@@ -50,7 +50,7 @@ function towersAvailable() {
 		type : 'Super',
 		img  : 'resources/Images/Tours/panda-super.svg',
 		time : 2000,
-		money: 60,
+		money: 500,
 		sizeX: 60,
 		sizeY: 60,
 		damage: 10,
