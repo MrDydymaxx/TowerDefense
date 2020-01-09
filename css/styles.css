@@ -1,8 +1,8 @@
 body {
-	background-image: url("../resources/Images/");
+	background-image: url("../resources/Images/background.jpg");
 }
 .accueil{
-	background-image: url("../resources/Images/background-accueil.png");
+	background-image: url("../resources/Images/background.jpg");
 
 }
 .NomJeu{
@@ -17,7 +17,7 @@ body {
 	width: 5%;
 }
 .image_accueil{
-	width: 5%;
+	width: 10%;
 }
 .game {
 	/*width: 2000px;*/
