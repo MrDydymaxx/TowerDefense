@@ -1,12 +1,11 @@
 body {
-	background-image: url("../resources/Images/background.jpg");
 }
 .accueil{
 	background-image: url("../resources/Images/background.jpg");
-
 }
 .GameOver{
-	display: hidden;
+	background-image: url("../resources/Images/background.jpg");
+	visibility: hidden;
 }
 .NomJeu{
 	font-size: 4em;

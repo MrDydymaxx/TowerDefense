@@ -8,11 +8,11 @@ $(function() {
 	// Objet littéral qui stocke l'argent, les vies et la vitesse du jeu
 	var	Player = {
 			money: 600,
-			life : 20,
+			life : 5,
 			speed: 5, // 10 = fast; 50 = normal mode
 			time : 0, // time (in sec) before monsters move
 			level: 1,
-			bestScore :0;
+			bestScore :0,
 		}; 
 
 	/* ---------- ---------- */
@@ -79,6 +79,10 @@ $(function() {
 // Fonction qui déclare les monstres à créer et les stocke dans le tableau des monstres
 function makeMonsters(monsters, Parcours, Player) {
 	var MonsterToCreate;
+	if (Player.life <= 0) {
+        Player.level--;
+        return;
+    }
 
 	// On crée l'ensemble des monstres que l'on stocke dans un tableau
 	for (var i = 0, max = 5; i < max; i++) {
