@@ -12,6 +12,7 @@ $(function() {
 			speed: 5, // 10 = fast; 50 = normal mode
 			time : 0, // time (in sec) before monsters move
 			level: 1,
+			bestScore :0;
 		}; 
 
 	/* ---------- ---------- */
@@ -105,7 +106,17 @@ function startGame(Player, Parcours, monsters, towers) {
 
 			// On arrête le décompte
 			clearInterval(timer);
-
+			$(".fight").click(function(){
+					//On réinitialise le score
+					game.level = 0;
+					$("span.level").text("0");
+					//On réinitialise le temps
+					game.time =0;
+					//On relance le timer
+					startGame(game);
+					//On masque le lien Restart
+					$(this).fadeOut(1000);
+					});
 			// On lance le timer pour déplacer les monstres et attaquer
 			monsterMove(Player, Parcours, monsters, towers, Player.speed);
 		}

@@ -15,8 +15,7 @@
   <body>
 
 <!-- Partie jeu --> 
-<!--
-	<div class="container-fluid">
+	<div class="container-fluid gamepage">
 		<div class="col-md-12">
 			<div class="game">
 				<div class="infos">
@@ -24,7 +23,7 @@
 							<div class="col-md-3"><span class="life">20</span> life</div>
 							<div class="col-md-3"><span class="money">3</span> <img src="https://cdn3.iconfinder.com/data/icons/shopping-and-retail-15/512/gemstone-512.png" alt="Diamond" class="diamond img-fluid"></div>
 							<div class="col-md-3">Level <span class="level">1</span></div>
-							<div class="col-md-3"><span class="time"></span> sec</div>
+							<div class="col-md-3"><span class="time">0</span> sec</div>
 						</div>
 				</div>
 
@@ -48,10 +47,10 @@
 			<div class="row all-towers">
 			</div>
 		</div>
-	</div>-->
+	</div>
 
 <!-- Page GameOver--> 
-  	<div class="container-fluid accueil text-center">
+  	<div class="container-fluid GameOver text-center">
   		<div class="col-md-12">
   			<!--GameOver-->
   			<div class="row">
@@ -66,6 +65,12 @@
 	  				<span class="GameOvertitle">Game Over</span>
   				</div>
   			</div>
+  		<!-- BestScore -->
+  			<div class="row">
+				<div class="col-md-12">
+					<h2>Meilleur Score : <span class="bestScore">0</span></h2>
+				</div>
+			</div>
 	<!-- Choix du niveau -->
   			<div class="row">
 				<div class="col-md-12 mt-3">
@@ -93,7 +98,7 @@
   			<div class="row">
   				<div class="col-md-12 mt-5">
   					<div class="offset-md-4 col-md-4 offset-md-4">
-		  				<input type="button" class="btn btn-light btn-lg border border-light" value="RECOMMENCER">
+		  				<input type="button" class="btn btn-light btn-lg border border-light recommencerbutton" value="RECOMMENCER">
 		  					<!--<input type="image" src="img_submit.gif" alt="Submit">-->
 		  			</div>
   				</div>

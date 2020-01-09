@@ -147,7 +147,24 @@ function course(Parcours, monsters,Player, towers) {
 				$('.infos span.life').fadeOut('fast', function() {
 					$(this).text(0);
 				}).fadeIn();
-				alert("GAME OVER !");
+				clearInterval(timer);
+				$(".GameOver").fadeIn(1000);
+
+				if(game.level > game.bestScore){
+					game.bestScore = game.level;
+					$(".bestScore").text(game.bestScore);
+				}
+				$(".recommencerbutton").click(function(){
+					//On réinitialise le score
+					game.level = 0;
+					$("span.level").text("0");
+					//On réinitialise le temps
+					game.time =0;
+					//On relance le timer
+					startGame(game);
+					//On masque le lien Restart
+					$(this).fadeOut(1000);
+					});
 			}
 			else
 			{

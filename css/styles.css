@@ -5,6 +5,9 @@ body {
 	background-image: url("../resources/Images/background.jpg");
 
 }
+.GameOver{
+	display: hidden;
+}
 .NomJeu{
 	font-size: 4em;
 	margin: 50px;
