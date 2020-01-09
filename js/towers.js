@@ -14,7 +14,7 @@ function towersAvailable() {
 		money: 20,
 		sizeX: 60,
 		sizeY: 60,
-		damage: 0.20,
+		damage: 3,
 		slow: 1,
 	};
 	towersAvailable.push(ClassicTower);
@@ -27,8 +27,8 @@ function towersAvailable() {
 		money: 40,
 		sizeX: 60,
 		sizeY: 60,
-		damage: 0.10,
-		slow: 0.70,
+		damage: 1,
+		slow: 0.80,
 	};
 	towersAvailable.push(IceTower);
 
@@ -40,7 +40,7 @@ function towersAvailable() {
 		money: 60,
 		sizeX: 60,
 		sizeY: 60,
-		damage: 1,
+		damage: 10,
 		slow: 1,
 	};
 	towersAvailable.push(FireTower);

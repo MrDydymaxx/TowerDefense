@@ -31,8 +31,7 @@ function makeCourse(Parcours) {
 				break;
 
 			case 'left':
-				html    += '<div style="height: ' + Parcours.sizeCourse + 'px; width: ' + (Parcours.course[i][1] + Parcours.sizeCourse) + 'px;top: ' + (prevTop - Parcours.sizeCourse/2 + 35) + 'px; left: ' + (prevLeft-Parcours.course[i][1]) + 'px;"></div>';
-				prevLeft-= Parcours.course[i][1];
+				html    += '<div style="height: ' + Parcours.sizeCourse + 'px; width: ' + (Parcours.course[i][1] + Parcours.sizeCourse) + 'px;top: ' + (prevTop - Parcours.sizeCourse/2 + 35) + 'px; left: ' + (prevLeft-Parcours.course[i][1]) + 'px;"></div>';				prevLeft-= Parcours.course[i][1];
 				break;
 		}
 	}
@@ -90,7 +89,7 @@ function course(Parcours, monsters,Player, towers) {
 					}
 					else {
 						monsters[i].topTemp = 0;
-						monsters[i].cStep+= monsters[i].speed;
+						monsters[i].cStep++;
 					}
 					break;
 				
@@ -103,7 +102,7 @@ function course(Parcours, monsters,Player, towers) {
 					}
 					else {
 						monsters[i].topTemp = 0;
-						monsters[i].cStep+=monsters[i].speed;
+						monsters[i].cStep++;
 					}
 					break;
 
@@ -116,7 +115,7 @@ function course(Parcours, monsters,Player, towers) {
 					}
 					else {
 						monsters[i].leftTemp = 0;
-						monsters[i].cStep+=monsters[i].speed;
+						monsters[i].cStep++;
 					}
 					break;
 
