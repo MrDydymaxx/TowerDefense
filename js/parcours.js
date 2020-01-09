@@ -9,7 +9,7 @@ function makeCourse(Parcours) {
 	calculSizeCourse(Parcours);
 
 	var prevTop  = 0,
-		prevLeft = Parcours.start - 60; // On retire 60 afin de centrer le parcours sur les monstres
+		prevLeft = Parcours.start - 25; // On retire 60 afin de centrer le parcours sur les monstres
 
 	var html = '<div class="parcours" style="top:0px;">';
 
@@ -26,12 +26,12 @@ function makeCourse(Parcours) {
 				break;
 
 			case 'right':
-				html    += '<div style="height: ' + Parcours.sizeCourse + 'px; width: ' + (Parcours.course[i][1] + Parcours.sizeCourse) + 'px;top: ' + (prevTop - Parcours.sizeCourse/2 + 45) + 'px; left: ' + prevLeft + 'px;"></div>';
+				html    += '<div style="height: ' + Parcours.sizeCourse + 'px; width: ' + (Parcours.course[i][1] + Parcours.sizeCourse) + 'px;top: ' + (prevTop - Parcours.sizeCourse/2 + 35) + 'px; left: ' + prevLeft + 'px;"></div>';
 				prevLeft+= Parcours.course[i][1];
 				break;
 
 			case 'left':
-				html    += '<div style="height: ' + Parcours.sizeCourse + 'px; width: ' + (Parcours.course[i][1] + Parcours.sizeCourse) + 'px;top: ' + (prevTop - Parcours.sizeCourse/2 + 45) + 'px; left: ' + (prevLeft-Parcours.course[i][1]) + 'px;"></div>';
+				html    += '<div style="height: ' + Parcours.sizeCourse + 'px; width: ' + (Parcours.course[i][1] + Parcours.sizeCourse) + 'px;top: ' + (prevTop - Parcours.sizeCourse/2 + 35) + 'px; left: ' + (prevLeft-Parcours.course[i][1]) + 'px;"></div>';
 				prevLeft-= Parcours.course[i][1];
 				break;
 		}
