@@ -1,18 +1,29 @@
 body {
-	background-color: #43a40e;
+	background-image: url("../resources/Images/");
 }
 .accueil{
-	background-image: url("resources/Background_accueil.svg");
+	background-image: url("../resources/Images/background-accueil.png");
+
+}
+.NomJeu{
+	font-size: 4em;
+	margin: 50px;
 }
 .container-fluid {
 	margin: 0px;
 	padding: 0px;
 }
+.logo{
+	width: 5%;
+}
+.image_accueil{
+	width: 5%;
+}
 .game {
 	/*width: 2000px;*/
 	/*height: 1500px;*/
 	z-index: -5;
-	/*background: url('resources/game.jpg') no-repeat;*/
+	background-color: green;
 }
 
 .game .infos {
@@ -60,7 +71,7 @@ body {
 .game .area {
 	display: none;
 	position: absolute;
-	background-color: rgba(100,100,100,0.1);
+	background-color: green;
 	z-index: 0;
 }
 
@@ -138,5 +149,5 @@ body {
 	top: 0px;
 	left: 0px;
 	z-index: 3;
-	background: url('../resources/builder.png') no-repeat;
+	background: url('../resources//Images/builder.png') no-repeat;
 }

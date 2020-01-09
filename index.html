@@ -20,27 +20,26 @@
   			<div class="row">
   				<div class="col-md-12">
 					<!-- Logo -->
-	  				<img src="" alt=''>
+	  				<img src="resources/Images/logo.svg" alt='logo' class="logo">
 	 				<!-- Title -->
-	  				<h1>PandaWar</h1>
+	  				<span class="NomJeu text-light">PandaWar</span>
   				</div>
   			</div>
   			<div class="row">
   				<div class="col-md-12">
 	  				<!-- Nom créateurs -->
-	  				<h4>Créé par Annaïk LE GALL, Dylan LADERRIERE, Sophie SENECAL et Walid OUBAIDALLAH</h4>
+	  				<h5>Créé par Annaïk LE GALL, Dylan LADERRIERE, Sophie SENECAL et Walid OUBAIDALLAH</h5>
 				</div>
-				<div class="offset-md-2 col-md-8 offset-md-2 ">
+				<div class="offset-md-1 col-md-10 offset-md-1 bg-secondary text-light">
 	  				<!-- Description du jeu -->
-					<p>Une tribu de panda, souhaitent à tout prix défendre leur territoire et faire perdurer leur règne. Cette fois-ci, ils seront confrontés à une terrible menace, encore jamais connue. Une organisation souhaite assiéger le lieu afin de le déforester et y construire une usine à sucre.<br>
-	  				Une grande bataille aura lieu en ce jour !<br>
-
-					Les Panda règneront-ils une fois de plus ? À vous de décider du sort qui leur appartient !</p>
+					<p>Une tribu de panda, souhaitent à tout prix défendre leur territoire et faire perdurer leur règne. Cette fois-ci, ils seront confrontés à une terrible menace, encore jamais connue.<br>
+					Une organisation souhaite assiéger le lieu afin de le déforester et y construire une usine à sucre.<br>
+	  				Une grande bataille aura lieu en ce jour ! Les Panda règneront-ils une fois de plus ? À vous de décider du sort qui leur appartient !</p>
 	  			</div>
   			</div>
   	<!-- Pseudo du joueur --> 
   			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12 mt-3">
 	  				<form action="????.php">
 						 Pseudo : <input type="text" name="pseudo"><br>
 					</form>
@@ -48,44 +47,39 @@
 			</div>
 	<!-- Choix du niveau -->
   			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12 mt-3">
 	  				Niveau de difficulté : 
 	  				<div class="btn-group btn-group-toggle" data-toggle="buttons">
-						<label class="btn btn-outline-light active">
+						<label class="btn btn-light active border border-secondary">
 							<input type="radio" name="options" id="option1" autocomplete="off" checked>Nooby Mode
 						</label>
-						<label class="btn btn-outline-light">
+						<label class="btn btn-light border border-secondary">
 						    <input type="radio" name="options" id="option2" autocomplete="off">Chill Mode
 						</label>
-						<label class="btn btn-outline-light">
+						<label class="btn btn-light border border-secondary">
 						    <input type="radio" name="options" id="option3" autocomplete="off">Hardcore Mode
 						</label>
 					</div>
 				</div>
 			</div>
 	<!-- Infos suivant la difficulté -->
-  			<div class="row">
-  					<div class="col-md-4">Vies Max : <span class="maxlife">20</span> vies</div>
-					<div class="col-md-4">Bambous de départ : <span class="money">3</span><img src="" alt="" class=""></div>
-					<div class="col-md-4">Vitesse des monstres : <span class="levelmonsterspeed">1</span>x</div>
+  			<div class="row mt-3">
+  					<div class="offset-1 col-md-2 bg-secondary text-light">Vies Max : <span class="maxlife">20</span><img src="resources/Images/vie.svg" alt="" class="image_accueil ml-2"> </div>
+					<div class="offset-2 col-md-2 bg-secondary text-light">Bambous de départ : <span class="money">3</span><img src="resources/Images/argent.svg" alt="" class="image_accueil ml-2"></div>
+					<div class="offset-1 col-md-2 bg-secondary text-light offset-1">Vitesse des monstres : <span class="levelmonsterspeed">1</span>x</div>
   			</div>
   	<!-- Bouton validé -->
   			<div class="row">
-  				<div class="col-md-12">
-  					<div class="offset-md-4 col-md-4 offset-md-4 ">
-		  				<input type="button" class="btn btn-outline-light btn-lg" value="FIGHT !">
+  				<div class="col-md-12 mt-3">
+  					<div class="offset-md-4 col-md-4 offset-md-4">
+		  				<input type="button" class="btn btn-light btn-lg border border-secondary" value="FIGHT !">
 		  					<!--<input type="image" src="img_submit.gif" alt="Submit">-->
 		  			</div>
   				</div>
   			</div>
 	<!-- Descriptions des tours et monstres-->
-  			<div class="row">
-  				<div class="col-md-12">
-					<h3>Tours et Monstres que vous pouvez rencontrer lors de votre bataille</h3>
-  				</div>
-  			</div>
   			<div class="row">		
-	  			<div class="col-md-5 mr-n5 ml-5">
+	  			<div class="col-md-5 mr-n5 ml-5 mt-n4">
 	  				<!-- Descriptions des tours--> 
 	  				<div class="row">
 		  				<div class="col-md-12">
@@ -95,7 +89,7 @@
 	  				<div class="row ">
 		  				<div class="col-md-2">
 		  					<div class="row">
-		  						<div class="col-md-12"><img src="ressources/Images/Tours/panda-basique.svg" alt=''></div>
+		  						<div class="col-md-12"><img src="resources/Images/Tours/panda-basique.svg" alt=''></div>
 		  						<div class="card">
 								  <div class="card-body mt-n3 mb-n3">
 			  						Time : <span class="maxlife">2</span>s<br>
@@ -106,10 +100,10 @@
 								</div>
 		  					</div>
 		  					<div class="row mt-n3 mb-n3">
-		  						<div class="col-md-12"><img src="ressources/Images/fleche.svg" alt=''></div>
+		  						<div class="col-md-12"><img src="resources/Images/fleche.svg" alt=''></div>
 		  					</div>
 		  					<div class="row">
-		  						<div class="col-md-12"><img src="ressources/Images/Tours/panda-bambou.svg" alt=''></div>
+		  						<div class="col-md-12"><img src="resources/Images/Tours/panda-bambou.svg" alt=''></div>
 		  						<div class="card">
 								  <div class="card-body mt-n3 mb-n3">
 			  						Time : <span class="maxlife">2</span>s<br>
@@ -122,7 +116,7 @@
 	  					</div>
 	  					<div class="offset-md-1 col-md-2">
 	  						<div class="row">
-		  						<div class="col-md-12"><img src="ressources/Images/Tours/panda-sarbacane.svg" alt=''></div>
+		  						<div class="col-md-12"><img src="resources/Images/Tours/panda-sarbacane.svg" alt=''></div>
 		  						<div class="card">
 								  <div class="card-body mt-n3 mb-n3">
 			  						Time : <span class="maxlife">2</span>s<br>
@@ -133,10 +127,10 @@
 								</div>
 		  					</div>
 		  					<div class="row mt-n3 mb-n3">
-		  						<div class="col-md-12"><img src="ressources/Images/fleche.svg" alt=''></div>
+		  						<div class="col-md-12"><img src="resources/Images/fleche.svg" alt=''></div>
 		  					</div>
 		  					<div class="row">
-		  						<div class="col-md-12"><img src="ressources/Images/Tours/panda-artifice.svg" alt=''></div>
+		  						<div class="col-md-12"><img src="resources/Images/Tours/panda-artifice.svg" alt=''></div>
 		  						<div class="card">
 								  <div class="card-body mt-n3 mb-n3">
 			  						Time : <span class="maxlife">2</span>s<br>
@@ -149,7 +143,7 @@
 	  					</div>
 	  					<div class="offset-md-1 col-md-2">
 	  						<div class="row">
-		  						<div class="col-md-12"><img src="ressources/Images/Tours/panda-eau.svg" alt=''></div>
+		  						<div class="col-md-12"><img src="resources/Images/Tours/panda-eau.svg" alt=''></div>
 		  						<div class="card">
 								  <div class="card-body mt-n3 mb-n3">
 			  						Time : <span class="maxlife">2</span>s<br>
@@ -160,10 +154,10 @@
 								</div>
 		  					</div>
 		  					<div class="row mt-n3 mb-n3">
-		  						<div class="col-md-12"><img src="ressources/Images/fleche.svg" alt=''></div>
+		  						<div class="col-md-12"><img src="resources/Images/fleche.svg" alt=''></div>
 		  					</div>
 		  					<div class="row">
-		  						<div class="col-md-12"><img src="ressources/Images/Tours/panda-boue.svg" alt=''></div>
+		  						<div class="col-md-12"><img src="resources/Images/Tours/panda-boue.svg" alt=''></div>
 		  						<div class="card">
 								  <div class="card-body mt-n3 mb-n3">
 			  						Time : <span class="maxlife">2</span>s<br>
@@ -175,7 +169,7 @@
 		  					</div>
 	  					</div>
 	  					<div class="offset-md-1 col-md-3 d-flex flex-column justify-content-center align-items-center">
-	  						<img src="ressources/Images/Tours/panda-super.svg" alt=''>
+	  						<img src="resources/Images/Tours/panda-super.svg" alt=''>
   							<div class="card">
 								  <div class="card-body mt-n3 mb-n3">
 			  						Time : <span class="maxlife">10</span>s<br>
@@ -187,20 +181,20 @@
 	  					</div>
 	  				</div>
   				</div>
-  				<div class="col-md-2 d-flex flex-column justify-content-center align-items-center">
+  				<div class="col-md-2 d-flex flex-column justify-content-center align-items-center text-light">
   					<h1>VS</h1>
   				</div>
-  				<div class="col-md-5">
+  				<div class="col-md-5 mt-n4">
   					<div class="row">
 		  				<div class="col-md-12">
 							<h4>Monstres</h4>
 		  				</div>
 		  			</div>
-		  			<div class="row">
+		  			<div class="row mt-n3">
 		  			<!-- Descriptions des monstres--> 
 		  				<div class="col-md-3">
 		  					<div class="row">
-								<img src="ressources/Images/Monstres/homme-troconneuse.svg" alt=''>
+								<img src="resources/Images/Monstres/homme-troconneuse.svg" alt=''>
 		  						<div class="card">
 								  	<div class="card-body mt-n3 mb-n3">
 				  						HP : <span class="maxlife">2</span>s<br>
@@ -211,7 +205,7 @@
 								</div>
 		  					</div>
 		  					<div class="row">
-		  						<img src="ressources/Images/Monstres/homme-torche.svg" alt=''>
+		  						<img src="resources/Images/Monstres/homme-torche.svg" alt=''>
 		  						<div class="card">
 								  	<div class="card-body mt-n3 mb-n3">
 				  						HP : <span class="maxlife">2</span>s<br>
@@ -224,7 +218,7 @@
 	  					</div>
 	  					<div class="offset-md-1 col-md-3">
 	  						<div class="row">
-		  						<img src="ressources/Images/Monstres/homme-bulldozer.svg" alt='' class="ml-2">
+		  						<img src="resources/Images/Monstres/homme-bulldozer.svg" alt='' class="ml-2">
 		  						<div class="card">
 								  	<div class="card-body mt-n3 mb-n3">
 				  						HP : <span class="maxlife">2</span>s<br>
@@ -235,7 +229,7 @@
 								</div>
 		  					</div>
 		  					<div class="row">
-		  						<img src="ressources/Images/Monstres/homme-bombardier.svg" alt=''  class="ml-2">
+		  						<img src="resources/Images/Monstres/homme-bombardier.svg" alt=''  class="ml-2">
 		  						<div class="card">
 									 <div class="card-body mt-n3 mb-n3">
 				  						HP : <span class="maxlife">2</span>s<br>
@@ -247,7 +241,7 @@
 		  					</div>
 	  					</div>
 	  					<div class="offset-md-1 col-md-4 d-flex flex-column justify-content-center align-items-center">
-	  						<img src="ressources/Images/Monstres/homme-businessman.svg" alt=''  class="ml-n5">
+	  						<img src="resources/Images/Monstres/homme-businessman.svg" alt=''  class="ml-n5">
   							<div class="card">
 								<div class="card-body mt-n3 mb-n3">
 			  						HP : <span class="maxlife">2</span>s<br>
