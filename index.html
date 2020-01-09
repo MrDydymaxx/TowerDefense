@@ -10,39 +10,113 @@
 
 	<link rel="stylesheet" href="css/styles.css">
 
-	<title>Line Tower Defense</title>
+	<title>PandaWar</title>
   </head>
   <body>
 
 <!-- Page accueil --> 
-  	<div class="container-fluid">
+  	<div class="container accueil text-center">
   		<div class="col-md-12">
   			<div class="accueil">
   				<div class="row">
-
-  					<!-- Title -->
-  					<h1></h1>
-
-  					<!-- Description du jeu -->
-  					<p></p>
+  					<div class="col-md-12">
+						<!-- Logo -->
+	  					<img src="" alt=''>
+	  					<!-- Title -->
+	  					<h1>PandaWar</h1>
+  					</div>
+  				<div class="row">
+  					<div class="col-md-12">
+	  					<!-- Nom créateurs -->
+	  					<h4>Créé par Annaïk LE GALL, Dylan LADERRIERE, Sophie SENECAL et Walid OUBAIDALLAH</h4>
+	  				</div>
+					<div class="row">
+	  					<!-- Description du jeu -->
+	  					<p>TowerDenfense avec des pandas blablalb faut remplir</p>
+	  				</div>
+  				</div>
+  				<div class="row">
+					<div class="col-md-12">
+	  					<!-- Pseudo du joueur --> 
+	  					<form action="????.php">
+						  Pseudo : <input type="text" name="pseudo"><br>
+						  
+						</form>
+					</div>
+  				<div class="row">
+					<div class="col-md-12">
+	  					<!-- Choix du niveau -->
+	  					Difficulty Level : 
+	  					<div class="btn-group btn-group-toggle" data-toggle="buttons">
+						  <label class="btn btn-outline-light active">
+						    <input type="radio" name="options" id="option1" autocomplete="off" checked> Nooby Mode
+						  </label>
+						  <label class="btn btn-outline-light">
+						    <input type="radio" name="options" id="option2" autocomplete="off"> Chill Mode
+						  </label>
+						  <label class="btn btn-outline-light">
+						    <input type="radio" name="options" id="option3" autocomplete="off"> Hardcore Mode
+						  </label>
+						</div>
+					</div>
+  					<div class="row">
+  						<div class="col-md-12">
+  							<!-- Infos suivant la difficulté -->
+  							<div class="col-md-3">Max lives :<span class="maxlife">20</span> life</div>
+							<div class="col-md-3">Start Money : <span class="money">3</span><img src="https://cdn3.iconfinder.com/data/icons/shopping-and-retail-15/512/gemstone-512.png" alt="Diamond" class="diamond img-fluid"></div>
+							<div class="col-md-3">Monster speed :<span class="monsterspeed">1</span>x</div>
+  						</div>
+  					</div>
   				</div>
 
   				<div class="row">
-					<!-- Images des pandas et des hommes -->  					
+  					<div class="col-md-12">
+  						<div class="offset-md-4 col-md-4 offset-md-4 ">
+		  					<!-- Bouton validé -->
+		  					<input type="button" class="btn btn-outline-light btn-lg" value="FIGHT !">
+		  					<!--<input type="image" src="img_submit.gif" alt="Submit">-->
+		  				</div>
+  					</div>
   				</div>
 
   				<div class="row">
-  					<!-- Descriptions des pandas et des hommes --> 
+  					<div class="col-md-12">
+						<h3>Towers and monsters you can encounter on your journey to PandaWar</h3>
+  					</div>				
+  					<div class="col-md-5">
+  						<!-- Descriptions des tours--> 
+  						<div class="col-md-2">
+  							<img src="" alt=''>
+  							<img src="" alt=''>
+  						</div>
+  						<div class="offset-md-1 col-md-2">
+  							<img src="" alt=''>
+  							<img src="" alt=''>
+  						</div>
+  						<div class="offset-md-1 col-md-2">
+  							<img src="" alt=''>
+  							<img src="" alt=''>
+  						</div>
+  						<div class="offset-md-1 col-md-3">
+  							<img src="" alt=''>
+  						</div>
+  					</div>
+  					<div class="col-md-2">
+  						<h1>VS</h1>
+  					</div>
+  					<div class="col-md-5">
+  						<!-- Descriptions des monstres--> 
+  						<div class="col-md-5">
+  							<img src="" alt=''>
+  							<img src="" alt=''>
+  						</div>
+  						<div class="offset-md-2 col-md-5">
+  							<img src="" alt=''>
+  							<img src="" alt=''>
+  						</div>
+  					</div>
   				</div>
-  				<div class="row">
-  					<!-- Choix du niveau --> 
-
-  						<!-- Il faut que lorsqu'on passe la souris sur le niveau sélectionner, on est diverses informations : nombre de vie du joueur au départ, nombre d'argent de départ, etc.--> 
-  				</div>
-
-  				<div class="row">
-  					<!-- Bouton validé --> 	
-  				</div>
+  				
   			</div>
   		</div>
   	</div>
@@ -55,7 +129,7 @@
 			<div class="game">
 				<div class="infos">
 						<div class="row">
-							<div class="col-md-3"><span class="life">20</span> lifes</div>
+							<div class="col-md-3"><span class="life">20</span> life</div>
 							<div class="col-md-3"><span class="money">3</span> <img src="https://cdn3.iconfinder.com/data/icons/shopping-and-retail-15/512/gemstone-512.png" alt="Diamond" class="diamond img-fluid"></div>
 							<div class="col-md-3">Level <span class="level">1</span></div>
 							<div class="col-md-3"><span class="time"></span> sec</div>
