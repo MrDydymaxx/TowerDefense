@@ -31,8 +31,7 @@ function makeCourse(Parcours) {
 				break;
 
 			case 'left':
-				html    += '<div style="height: ' + Parcours.sizeCourse + 'px; width: ' + (Parcours.course[i][1] + Parcours.sizeCourse) + 'px;top: ' + (prevTop - Parcours.sizeCourse/2 + 35) + 'px; left: ' + (prevLeft-Parcours.course[i][1]) + 'px;"></div>';
-				prevLeft-= Parcours.course[i][1];
+				html    += '<div style="height: ' + Parcours.sizeCourse + 'px; width: ' + (Parcours.course[i][1] + Parcours.sizeCourse) + 'px;top: ' + (prevTop - Parcours.sizeCourse/2 + 35) + 'px; left: ' + (prevLeft-Parcours.course[i][1]) + 'px;"></div>';				prevLeft-= Parcours.course[i][1];
 				break;
 		}
 	}
@@ -70,7 +69,7 @@ function calculSizeCourse(Parcours) {
 }
 
 // Fonction qui déplace les monstres
-function course(Parcours, monsters,Player) {
+function course(Parcours, monsters,Player, towers) {
 
 	// On déplace tous les monstres en fonction du parcours de 1px
 	for (var i = 0, c = monsters.length; i < c; i++) {
@@ -84,8 +83,8 @@ function course(Parcours, monsters,Player) {
 				// SI le monstre doit descendre
 				case "down":
 					if (monsters[i].topTemp < Parcours.course[monsters[i].cStep][1]) {
-						monsters[i].topTemp++;
-						monsters[i].top++;
+						monsters[i].topTemp+= monsters[i].speed;
+						monsters[i].top+= monsters[i].speed;
 						monsters[i].moveUpDown();
 					}
 					else {
@@ -97,8 +96,8 @@ function course(Parcours, monsters,Player) {
 				// SI le monstre doit aller à droite
 				case "up":
 					if (monsters[i].topTemp < Parcours.course[monsters[i].cStep][1]) {
-						monsters[i].topTemp++;
-						monsters[i].top--;
+						monsters[i].topTemp+=monsters[i].speed;
+						monsters[i].top-=monsters[i].speed;
 						monsters[i].moveUpDown();
 					}
 					else {
@@ -110,8 +109,8 @@ function course(Parcours, monsters,Player) {
 				// SI le monstre doit aller à droite
 				case "right":
 					if (monsters[i].leftTemp < Parcours.course[monsters[i].cStep][1]) {
-						monsters[i].leftTemp++;
-						monsters[i].left++;
+						monsters[i].leftTemp+=monsters[i].speed;
+						monsters[i].left+=monsters[i].speed;
 						monsters[i].moveLeftRight();
 					}
 					else {
@@ -123,8 +122,8 @@ function course(Parcours, monsters,Player) {
 				// SI le monstre doit aller à gauche
 				case "left":
 					if (monsters[i].leftTemp < Parcours.course[monsters[i].cStep][1]) {
-						monsters[i].leftTemp++;
-						monsters[i].left--;
+						monsters[i].leftTemp+=monsters[i].speed;
+						monsters[i].left-=monsters[i].speed;
 						monsters[i].moveLeftRight();
 					}
 					else {

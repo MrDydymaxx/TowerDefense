@@ -82,7 +82,7 @@ function makeMonsters(monsters, Parcours, Player) {
 	// On crée l'ensemble des monstres que l'on stocke dans un tableau
 	for (var i = 0, max = 5; i < max; i++) {
 		// On crée un monstre
-		MonsterToCreate = new Monster(-100*(i+1), Parcours.start, Player.level*100, 'Pikachu', 10*Player.level, 'https://cdn0.iconfinder.com/data/icons/Favorite_monsters/256/pink.png');
+		MonsterToCreate = new Monster(-100*(i+1), Parcours.start, Player.level*1000, i+1, 10*Player.level, 'https://cdn0.iconfinder.com/data/icons/Favorite_monsters/256/pink.png',1);
 		monsters.push(MonsterToCreate);
 	}
 }

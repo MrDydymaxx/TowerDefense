@@ -139,3 +139,8 @@ body {
 	z-index: 3;
 	background: url('../resources/builder.png') no-repeat;
 }
+.slow {
+	background:#FFF;
+	opacity: 0.5;
+	filter:alpha(opacity=50); 
+}

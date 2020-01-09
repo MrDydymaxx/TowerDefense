@@ -14,7 +14,7 @@ function towersAvailable() {
 		money: 20,
 		sizeX: 60,
 		sizeY: 60,
-		damage: 0.20,
+		damage: 3,
 		slow: 1,
 	};
 	towersAvailable.push(ClassicTower);
@@ -27,8 +27,8 @@ function towersAvailable() {
 		money: 40,
 		sizeX: 60,
 		sizeY: 60,
-		damage: 0.10,
-		slow: 0.70,
+		damage: 1,
+		slow: 0.80,
 	};
 	towersAvailable.push(IceTower);
 
@@ -40,7 +40,7 @@ function towersAvailable() {
 		money: 60,
 		sizeX: 60,
 		sizeY: 60,
-		damage: 1,
+		damage: 10,
 		slow: 1,
 	};
 	towersAvailable.push(FireTower);
@@ -152,7 +152,7 @@ function makeTowers(towers,Player) {
 			if (canCreate == true) {
 
 				// On crée une nouvelle tour
-				var newTower = new Tower(top, left, TowerSelected.dist, TowerSelected.type, TowerSelected.img, TowerSelected.time, TowerSelected.money, TowerSelected.damage);
+				var newTower = new Tower(top, left, TowerSelected.dist, TowerSelected.type, TowerSelected.img, TowerSelected.time, TowerSelected.money, TowerSelected.damage, TowerSelected.slow);
 				// On l'ajoute au tableau des tours
 				towers.push(newTower);
 
@@ -217,6 +217,7 @@ function Tower (top, left, dist, type, img, time, money, damage, slow, sizeX = 6
 	this.canAttack = false;
 	this.DOM       = false;
 	this.monsterTarget = null;
+	this.previousTarget = null;
 
 	if ((this.top-this.dist)>0) {
 		this.minTop = this.top - this.dist - 60;
