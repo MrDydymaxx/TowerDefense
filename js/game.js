@@ -1,5 +1,44 @@
+//Page accueil
+$(".fight").click(function (){
+	var name=$("#pseudo").val();
+		if (name) {
+			$("#acc").fadeOut("slow",function () {
+				$("#jeu").css("visibility","visible");
+				start(life,money,speed);
+				$("#jeu").fadeIn("slow");
+				});
+		}
+			else {
+			alert("Veuillez indiquer votre pseudo");
+		}
+});
+$('#option1').click(function(){
+		life=20;
+		money=100;
+		speed=50;
+		$('.maxlife').text(life);
+		$('.money').text(money);
+		$('.speed').text(speed);
+});
+$('#option2').click(function(){
+		life=10;
+		money=50;
+		speed=10;
+		$('.difficulteinfo span.maxlife').text(life);
+		$('.difficulteinfo span.money').text(money);
+		$('.difficulteinfo span.speed').text(speed);
+	});
+$('#option3').click(function(){
+		life=1;
+		money=20;
+		speed=5;
+		$('.difficulteinfo span.maxlife').text(life);
+		$('.difficulteinfo span.money').text(money);
+		$('.difficulteinfo span.speed').text(speed);
+});
+
 // Fonction jQuery : exécute le jeu une fois que le DOM est chargé
-$(function() {
+function start(life,money,speed) {
 
 	/* ---------- ---------- */
 	/* ----- SETTINGS ------ */
@@ -7,11 +46,12 @@ $(function() {
 
 	// Objet littéral qui stocke l'argent, les vies et la vitesse du jeu
 	var	Player = {
-			money: 20,
-			life : 20,
-			speed: 5, // 10 = fast; 50 = normal mode
-			time : 0, // time (in sec) before monsters move
+			money: money,
+			life : life,
+			speed: speed, // 10 = fast; 5 = normal mode
+			time : 10, // time (in sec) before monsters move
 			level: 1,
+			bestScore :0,
 		}; 
 
 	/* ---------- ---------- */
@@ -65,7 +105,8 @@ $(function() {
 
 	// On appelle la fonction qui lance le jeu
 	startGame(Player, Parcours, monsters, towers);
-})
+}
+	difficulty(Player, Parcours, monsters, towers)
 
 // ------------------------------------------------------------------------- //
 // ----------------------- ALL FUNCTIONS FOR THE GAME ---------------------- //
@@ -149,7 +190,17 @@ function startGame(Player, Parcours, monsters, towers) {
 
 			// On arrête le décompte
 			clearInterval(timer);
-
+			$(".fight").click(function(){
+					//On réinitialise le score
+					game.level = 0;
+					$("span.level").text("0");
+					//On réinitialise le temps
+					game.time =0;
+					//On relance le timer
+					startGame(game);
+					//On masque le lien Restart
+					$(this).fadeOut(1000);
+					});
 			// On lance le timer pour déplacer les monstres et attaquer
 			monsterMove(Player, Parcours, monsters, towers, Player.speed);
 		}
@@ -158,7 +209,6 @@ function startGame(Player, Parcours, monsters, towers) {
 		}
 	}, 1000);
 }
-
 // ----------------------
 // -- FUNCTIONS OTHERS --
 // ----------------------

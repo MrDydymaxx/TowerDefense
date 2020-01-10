@@ -1,12 +1,35 @@
 body {
-	background-color: #43a40e;
 }
-
+#jeu {
+	visibility: hidden;
+}
+.accueil{
+	background-image: url("../resources/Images/background.jpg");
+}
+.GameOver{
+	background-image: url("../resources/Images/background.jpg");
+	visibility: hidden;
+}
+.NomJeu{
+	font-size: 4em;
+	margin: 50px;
+}
 .container-fluid {
 	margin: 0px;
 	padding: 0px;
 }
-
+.logo{
+	width: 5%;
+}
+.image_accueil{
+	width: 10%;
+}
+.imageGameOver{
+	width: 10%;
+}
+.GameOvertitle{
+	font-size: 15em;
+}
 .game {
 	margin-left:-20px;
 	width: 100vw;
@@ -61,7 +84,7 @@ body {
 .game .area {
 	display: none;
 	position: absolute;
-	background-color: rgba(100,100,100,0.1);
+	background-color: green;
 	z-index: 0;
 }
 
@@ -133,11 +156,3 @@ body {
 	font-size: 11pt;
 }
 
-.game .peon {
-	width: 60px;
-	height: 60px;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	z-index: 3;
-}
