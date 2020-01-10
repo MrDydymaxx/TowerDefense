@@ -1,16 +1,44 @@
 //Page accueil
 $(".fight").click(function (){
-	$("#acc").fadeOut("slow",function () {
-		$("#jeu").css("visibility","visible");
-		start();
-		$("#jeu").fadeIn("slow");
+	var name=$("#pseudo").val();
+		if (name) {
+			$("#acc").fadeOut("slow",function () {
+				$("#jeu").css("visibility","visible");
+				start(life,money,speed);
+				$("#jeu").fadeIn("slow");
+				});
+		}
+			else {
+			alert("Veuillez indiquer votre pseudo");
+		}
+});
+$('#option1').click(function(){
+		life=20;
+		money=100;
+		speed=50;
+		$('.maxlife').text(life);
+		$('.money').text(money);
+		$('.speed').text(speed);
+});
+$('#option2').click(function(){
+		life=10;
+		money=50;
+		speed=10;
+		$('.difficulteinfo span.maxlife').text(life);
+		$('.difficulteinfo span.money').text(money);
+		$('.difficulteinfo span.speed').text(speed);
 	});
+$('#option3').click(function(){
+		life=1;
+		money=20;
+		speed=5;
+		$('.difficulteinfo span.maxlife').text(life);
+		$('.difficulteinfo span.money').text(money);
+		$('.difficulteinfo span.speed').text(speed);
 });
 
-
-
 // Fonction jQuery : exécute le jeu une fois que le DOM est chargé
-function start() {
+function start(life,money,speed) {
 
 	/* ---------- ---------- */
 	/* ----- SETTINGS ------ */
@@ -18,10 +46,10 @@ function start() {
 
 	// Objet littéral qui stocke l'argent, les vies et la vitesse du jeu
 	var	Player = {
-			money: 600,
-			life : 5,
-			speed: 5, // 10 = fast; 5 = normal mode
-			time : 0, // time (in sec) before monsters move
+			money: money,
+			life : life,
+			speed: speed, // 10 = fast; 5 = normal mode
+			time : 10, // time (in sec) before monsters move
 			level: 1,
 			bestScore :0,
 		}; 
@@ -140,33 +168,6 @@ function startGame(Player, Parcours, monsters, towers) {
 			Player.time--;
 		}
 	}, 1000);
-}
-
-function difficulty(Player, Parcours, monsters, towers) {
-	$('.difficulteinfo #option1').click(function(){
-		Player.life=10;
-		Player.money=100;
-		Player.speed=5;
-		$('.difficulteinfo span.maxlife').text(Player.life);
-		$('.difficulteinfo span.money').text(Player.money);
-		$('.difficulteinfo span.speed').text(Player.speed);
-	});
-	$('.difficulteinfo #option2').click(function(){
-		Player.life=5;
-		Player.money=50;
-		Player.speed=10;
-		$('.difficulteinfo span.maxlife').text(Player.life);
-		$('.difficulteinfo span.money').text(Player.money);
-		$('.difficulteinfo span.speed').text(Player.speed);
-	});
-	$('.difficulteinfo #option3').click(function(){
-		Player.life=1;
-		Player.money=10;
-		Player.speed=20;
-		$('.difficulteinfo span.maxlife').text(Player.life);
-		$('.difficulteinfo span.money').text(Player.money);
-		$('.difficulteinfo span.speed').text(Player.speed);
-	});
 }
 // ----------------------
 // -- FUNCTIONS OTHERS --

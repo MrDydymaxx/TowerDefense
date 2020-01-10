@@ -40,33 +40,25 @@
   	<!-- Pseudo du joueur --> 
   			<div class="row">
 				<div class="col-md-12 mt-3">
-	  				<form action="????.php">
-						<b> Pseudo : </b><input type="text" name="pseudo"><br>
-					</form>
+						<b> Pseudo : </b><input type="text" name="pseudo" id="pseudo"><br>
 				</div>
 			</div>
 	<!-- Choix du niveau -->
   			<div class="row">
 				<div class="col-md-12 mt-3 difficulte">
 	  				<b>Niveau de difficulté : </b>
-	  				<div class="btn-group btn-group-toggle" data-toggle="buttons">
-						<label class="btn btn-light border border-light">
-							<input type="radio" name="options" id="option1" autocomplete="off">Nooby Mode
-						</label>
-						<label class="btn btn-light active border border-light">
-						    <input type="radio" name="options" id="option2" autocomplete="off" checked>Chill Mode
-						</label>
-						<label class="btn btn-light border border-light">
-						    <input type="radio" name="options" id="option3" autocomplete="off">Hardcore Mode
-						</label>
-					</div>
+	  				<div class="btn-group">
+                            <input type="button" id="option1" value="NoobyMode" class="btn btn-light border border-light">
+                            <input type="button" name="options" id="option2" value="Chill mode" class="btn btn-light border border-light">
+                            <input type="button" name="options" id="option3" value="Hardcore mode" class="btn btn-light border border-light">
+                    </div>
 				</div>
 			</div>
 	<!-- Infos suivant la difficulté -->
   			<div class="row mt-3 difficulteinfo">
-  					<div class="offset-1 col-md-2 bg-light"><b>Vies Max : </b><span class="maxlife">20</span><img src="resources/Images/vie.svg" alt="" class="image_accueil ml-2"> </div>
-					<div class="offset-2 col-md-2 bg-light"><b>Bambous de départ : </b><span class="money">3</span><img src="resources/Images/argent.svg" alt="" class="image_accueil ml-2"></div>
-					<div class="offset-1 col-md-2 bg-light offset-1"><b>Vitesse des monstres : </b><span class="speed">1</span>x</div>
+  					<div class="offset-1 col-md-2 bg-light"><b>Vies Max : </b><span class="maxlife">10</span><img src="resources/Images/vie.svg" alt="" class="image_accueil ml-2"> </div>
+					<div class="offset-2 col-md-2 bg-light"><b>Bambous de départ : </b><span class="money">50</span><img src="resources/Images/argent.svg" alt="" class="image_accueil ml-2"></div>
+					<div class="offset-1 col-md-2 bg-light offset-1"><b>Vitesse des monstres : </b><span class="speed">10</span>x</div>
   			</div>
   	<!-- Bouton validé -->
   			<div class="row">
