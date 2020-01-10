@@ -147,7 +147,7 @@ function course(Parcours, monsters,Player, towers) {
 				$('.infos span.life').fadeOut('fast', function() {
 					$(this).text(0);
 				}).fadeIn();
-				$(".gamepage").fadeOut("slow", function () {
+				$("#jeu").fadeOut("slow", function () {
 					$(".GameOver").css("visibility","visible");
 					$(".GameOver").fadeIn("slow");
 				});
@@ -160,11 +160,12 @@ function course(Parcours, monsters,Player, towers) {
 					Player.level = 0;
 					$("span.level").text("0");
 					//On réinitialise le temps
-					Player.time =0;
-					//On relance le timer
-					startGame(game);
-					//On masque le lien Restart
-					$(this).fadeOut(1000);
+					Player.time =10;
+					$('.GameOver').fadeOut("slow",function (){
+						$(".GameOver").css("visibility","hidden");
+						$("#acc").css("visibility","visible");
+						$("#acc").fadeIn("slow");
+					});
 					});
 			}
 			else
