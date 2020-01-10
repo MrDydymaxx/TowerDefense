@@ -88,7 +88,7 @@ function displayTowers(Player){
 
 					'<img src="' + tabTowersAvailable[i].img + '" alt="Tour ' + tabTowersAvailable[i].type + '" class="tower img-fluid">' +
 					'<h5>' + tabTowersAvailable[i].type + '</h5>' +
-					'<p>' + tabTowersAvailable[i].money + ' <img src="https://cdn3.iconfinder.com/data/icons/shopping-and-retail-15/512/gemstone-512.png" alt="Diamond" class="diamond img-fluid"></p>' +
+					'<p>' + tabTowersAvailable[i].money + ' <img src="resources/Images/argent.svg" alt="Diamond" class="diamond img-fluid"></p>' +
 				'</div>';
 
 		$('.game-constructor .all-towers').append(html);
