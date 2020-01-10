@@ -1,5 +1,8 @@
 body {
 }
+#jeu {
+	visibility: hidden;
+}
 .accueil{
 	background-image: url("../resources/Images/background.jpg");
 }
@@ -148,14 +151,4 @@ body {
 
 .game-constructor .infos p {
 	font-size: 11pt;
-}
-
-.game .peon {
-	width: 60px;
-	height: 60px;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	z-index: 3;
-	background: url('../resources//Images/builder.png') no-repeat;
 }

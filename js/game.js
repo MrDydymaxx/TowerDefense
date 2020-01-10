@@ -1,5 +1,16 @@
+//Page accueil
+$(".fight").click(function (){
+	$("#acc").fadeOut("slow",function () {
+		$("#jeu").css("visibility","visible");
+		start();
+		$("#jeu").fadeIn("slow");
+	});
+});
+
+
+
 // Fonction jQuery : exécute le jeu une fois que le DOM est chargé
-$(function() {
+function start() {
 
 	/* ---------- ---------- */
 	/* ----- SETTINGS ------ */
@@ -66,7 +77,7 @@ $(function() {
 
 	// On appelle la fonction qui lance le jeu
 	startGame(Player, Parcours, monsters, towers);
-})
+}
 
 // ------------------------------------------------------------------------- //
 // ----------------------- ALL FUNCTIONS FOR THE GAME ---------------------- //
