@@ -9,7 +9,7 @@ $(function() {
 	var	Player = {
 			money: 600,
 			life : 5,
-			speed: 5, // 10 = fast; 50 = normal mode
+			speed: 1, // 10 = fast; 50 = normal mode
 			time : 0, // time (in sec) before monsters move
 			level: 1,
 			bestScore :0,
