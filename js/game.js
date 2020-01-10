@@ -78,6 +78,7 @@ function start() {
 	// On appelle la fonction qui lance le jeu
 	startGame(Player, Parcours, monsters, towers);
 }
+	difficulty(Player, Parcours, monsters, towers)
 
 // ------------------------------------------------------------------------- //
 // ----------------------- ALL FUNCTIONS FOR THE GAME ---------------------- //
@@ -142,14 +143,30 @@ function startGame(Player, Parcours, monsters, towers) {
 }
 
 function difficulty(Player, Parcours, monsters, towers) {
-	if($('.difficulteinfo span.life'))==($('#option1')){
+	$('.difficulteinfo #option1').click(function(){
 		Player.life=10;
 		Player.money=100;
 		Player.speed=5;
-		$('.difficulteinfo span.life').text(Player.life);
+		$('.difficulteinfo span.maxlife').text(Player.life);
 		$('.difficulteinfo span.money').text(Player.money);
 		$('.difficulteinfo span.speed').text(Player.speed);
-	}
+	});
+	$('.difficulteinfo #option2').click(function(){
+		Player.life=5;
+		Player.money=50;
+		Player.speed=10;
+		$('.difficulteinfo span.maxlife').text(Player.life);
+		$('.difficulteinfo span.money').text(Player.money);
+		$('.difficulteinfo span.speed').text(Player.speed);
+	});
+	$('.difficulteinfo #option3').click(function(){
+		Player.life=1;
+		Player.money=10;
+		Player.speed=20;
+		$('.difficulteinfo span.maxlife').text(Player.life);
+		$('.difficulteinfo span.money').text(Player.money);
+		$('.difficulteinfo span.speed').text(Player.speed);
+	});
 }
 // ----------------------
 // -- FUNCTIONS OTHERS --
