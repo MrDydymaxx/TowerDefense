@@ -1,5 +1,44 @@
+//Page accueil
+$(".fight").click(function (){
+	var name=$("#pseudo").val();
+		if (name) {
+			$("#acc").fadeOut("slow",function () {
+				$("#jeu").css("visibility","visible");
+				start(life,money,speed);
+				$("#jeu").fadeIn("slow");
+				});
+		}
+			else {
+			alert("Veuillez indiquer votre pseudo");
+		}
+});
+$('#option1').click(function(){
+		life=20;
+		money=100;
+		speed=50;
+		$('.maxlife').text(life);
+		$('.money').text(money);
+		$('.speed').text(speed);
+});
+$('#option2').click(function(){
+		life=10;
+		money=50;
+		speed=10;
+		$('.difficulteinfo span.maxlife').text(life);
+		$('.difficulteinfo span.money').text(money);
+		$('.difficulteinfo span.speed').text(speed);
+	});
+$('#option3').click(function(){
+		life=1;
+		money=20;
+		speed=5;
+		$('.difficulteinfo span.maxlife').text(life);
+		$('.difficulteinfo span.money').text(money);
+		$('.difficulteinfo span.speed').text(speed);
+});
+
 // Fonction jQuery : exécute le jeu une fois que le DOM est chargé
-$(function() {
+function start(life,money,speed) {
 
 	/* ---------- ---------- */
 	/* ----- SETTINGS ------ */
@@ -7,10 +46,10 @@ $(function() {
 
 	// Objet littéral qui stocke l'argent, les vies et la vitesse du jeu
 	var	Player = {
-			money: 600,
-			life : 5,
-			speed: 1, // 10 = fast; 50 = normal mode
-			time : 0, // time (in sec) before monsters move
+			money: money,
+			life : life,
+			speed: speed, // 10 = fast; 5 = normal mode
+			time : 10, // time (in sec) before monsters move
 			level: 1,
 			bestScore :0,
 		}; 
@@ -35,7 +74,7 @@ $(function() {
 				['up' ,100],
 				['right' ,300],
 				['down' ,200],
-				['right' ,500],
+				['right' ,1000],
 			]
 		};
 
@@ -66,7 +105,8 @@ $(function() {
 
 	// On appelle la fonction qui lance le jeu
 	startGame(Player, Parcours, monsters, towers);
-})
+}
+	difficulty(Player, Parcours, monsters, towers)
 
 // ------------------------------------------------------------------------- //
 // ----------------------- ALL FUNCTIONS FOR THE GAME ---------------------- //
@@ -79,16 +119,56 @@ $(function() {
 // Fonction qui déclare les monstres à créer et les stocke dans le tableau des monstres
 function makeMonsters(monsters, Parcours, Player) {
 	var MonsterToCreate;
-	if (Player.life <= 0) {
-        Player.level--;
-        return;
-    }
-
+	var PreviousLocation = 0;
 	// On crée l'ensemble des monstres que l'on stocke dans un tableau
-	for (var i = 0, max = 5; i < max; i++) {
-		// On crée un monstre
-		MonsterToCreate = new Monster(-100*(i+1), Parcours.start, Player.level*1000, i+1, 10*Player.level, 'https://cdn0.iconfinder.com/data/icons/Favorite_monsters/256/pink.png',1);
+	if (Player.life <= 0) {
+		Player.level--;
+		return;
+	}
+	//Toutes les dix waves il y a un boss, seul
+	if (Player.level % 10 == 0) {
+		MonsterToCreate = new Monster(PreviousLocation-100, Parcours.start, 5000+(5000*Player.level/5),"boss", 100,'resources/Images/Monstres/homme-businessman.svg',0.7);
 		monsters.push(MonsterToCreate);
+	}
+	else {
+		for (var i = 0, max = 1; i < max; i++) {
+		// On crée un monstre
+		MonsterToCreate = new Monster(PreviousLocation-100, Parcours.start, 400+(400*Player.level/5), i+1, 5, 'resources/Images/Monstres/homme-tronconneuse.svg',1);
+		monsters.push(MonsterToCreate);
+		PreviousLocation=MonsterToCreate.top;
+		}
+		// Toutes les deux waves on ajoute une tronconneuse
+		if (Player.level % 2 == 0) {
+			for (var i = 0, max = parseInt(Player.level/2); i < max; i++) {
+				MonsterToCreate = new Monster(PreviousLocation-100, Parcours.start,400+(400*Player.level/5), i+1, 5, 'resources/Images/Monstres/homme-tronconneuse.svg',1);
+				monsters.push(MonsterToCreate);
+				PreviousLocation=MonsterToCreate.top;
+			}
+		}
+		// Toutes les trois waves on ajoute une torche
+		if (Player.level % 3 == 0) {
+			for (var i = 0, max = parseInt(Player.level/3); i < max; i++) {
+				MonsterToCreate = new Monster(PreviousLocation-100, Parcours.start, 200+(200*Player.level/5), i+1, 10, 'resources/Images/Monstres/homme-torche.svg',1.5);
+				monsters.push(MonsterToCreate);
+				PreviousLocation=MonsterToCreate.top;
+			}
+		}
+		//Toutes les cinq waves on ajoute un bulldozer
+		if (Player.level % 5 == 0) {
+			for (var i = 0, max = parseInt(Player.level/5); i < max; i++) {
+				MonsterToCreate = new Monster(PreviousLocation-100, Parcours.start, 1500+(1500*Player.level/5), i+1, 20, 'resources/Images/Monstres/homme-bulldozer.svg',0.5);
+				monsters.push(MonsterToCreate);
+				PreviousLocation=MonsterToCreate.top;
+			}
+		}
+		//Toutes les 8 waves on ajoute un bombardier
+		if (Player.level % 8 == 0) {
+			for (var i = 0, max = parseInt(Player.level/8); i < max; i++) {
+				MonsterToCreate = new Monster(PreviousLocation-100, Parcours.start,650+(650*Player.level/5), i+1, 15, 'resources/Images/Monstres/homme-bombardier.svg',0.9);
+				monsters.push(MonsterToCreate);
+				PreviousLocation=MonsterToCreate.top;
+			}
+		}
 	}
 }
 
@@ -129,7 +209,6 @@ function startGame(Player, Parcours, monsters, towers) {
 		}
 	}, 1000);
 }
-
 // ----------------------
 // -- FUNCTIONS OTHERS --
 // ----------------------
@@ -143,6 +222,3 @@ function calcHypotenuse(a, b) {
 function hpPourcent (hp, hpMax) {
 	return parseInt(hp * 100 / hpMax);
 }
-
-
-

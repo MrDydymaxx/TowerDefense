@@ -1,5 +1,8 @@
 body {
 }
+#jeu {
+	visibility: hidden;
+}
 .accueil{
 	background-image: url("../resources/Images/background.jpg");
 }
@@ -28,10 +31,11 @@ body {
 	font-size: 15em;
 }
 .game {
-	/*width: 2000px;*/
-	/*height: 1500px;*/
+	margin-left:-20px;
+	width: 100vw;
+	height: 100vh;
 	z-index: -5;
-	background-color: green;
+	background: url('../resources/Images/Textures/herbe.png') repeat;
 }
 
 .game .infos {
@@ -40,6 +44,7 @@ body {
 	width: 300px;
 	height: 50px;
 	right: 0px;
+	color:white;
 	background-color: rgba(100,100,100,0.3);
 	z-index: 1;
 	text-align: center;
@@ -107,7 +112,8 @@ body {
 
 .game .parcours div {
 	position: absolute;
-	background-color: #b87306;
+	margin-left:20px;
+	background: url('../resources/Images/Textures/parcours.png') repeat;
 	opacity: 1;
 }
 
@@ -148,14 +154,4 @@ body {
 
 .game-constructor .infos p {
 	font-size: 11pt;
-}
-
-.game .peon {
-	width: 60px;
-	height: 60px;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	z-index: 3;
-	background: url('../resources//Images/builder.png') no-repeat;
 }

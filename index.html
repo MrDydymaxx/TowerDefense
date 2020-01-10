@@ -14,8 +14,244 @@
   </head>
   <body>
 
+<!-- Page accueil --> 
+  	<div class="container-fluid accueil text-center" id="acc">
+  		<div class="col-md-12">
+  			<div class="row">
+  				<div class="col-md-12">
+					<!-- Logo -->
+	  				<img src="resources/Images/logo.svg" alt='logo' class="logo">
+	 				<!-- Title -->
+	  				<span class="NomJeu">PandaWar</span>
+  				</div>
+  			</div>
+  			<div class="row">
+  				<div class="col-md-12">
+	  				<!-- Nom créateurs -->
+	  				<h5>Créé par Annaïk LE GALL, Dylan LADERRIERE, Sophie SENECAL et Walid OUBAIDALLAH</h5>
+				</div>
+				<div class="offset-md-1 col-md-10 offset-md-1 bg-light">
+	  				<!-- Description du jeu -->
+					<p>Une tribu de panda, souhaitent à tout prix défendre leur territoire et faire perdurer leur règne. Cette fois-ci, ils seront confrontés à une terrible menace, encore jamais connue.<br>
+					Une organisation souhaite assiéger le lieu afin de le déforester et y construire une usine à sucre.<br>
+	  				Une grande bataille aura lieu en ce jour ! Les Panda règneront-ils une fois de plus ? À vous de décider du sort qui leur appartient !</p>
+	  			</div>
+  			</div>
+  	<!-- Pseudo du joueur --> 
+  			<div class="row">
+				<div class="col-md-12 mt-3">
+						<b> Pseudo : </b><input type="text" name="pseudo" id="pseudo"><br>
+				</div>
+			</div>
+	<!-- Choix du niveau -->
+  			<div class="row">
+				<div class="col-md-12 mt-3 difficulte">
+	  				<b>Niveau de difficulté : </b>
+	  				<div class="btn-group">
+                            <input type="button" id="option1" value="NoobyMode" class="btn btn-light border border-light">
+                            <input type="button" name="options" id="option2" value="Chill mode" class="btn btn-light border border-light">
+                            <input type="button" name="options" id="option3" value="Hardcore mode" class="btn btn-light border border-light">
+                    </div>
+				</div>
+			</div>
+	<!-- Infos suivant la difficulté -->
+  			<div class="row mt-3 difficulteinfo">
+  					<div class="offset-1 col-md-2 bg-light"><b>Vies Max : </b><span class="maxlife">10</span><img src="resources/Images/vie.svg" alt="" class="image_accueil ml-2"> </div>
+					<div class="offset-2 col-md-2 bg-light"><b>Bambous de départ : </b><span class="money">50</span><img src="resources/Images/argent.svg" alt="" class="image_accueil ml-2"></div>
+					<div class="offset-1 col-md-2 bg-light offset-1"><b>Vitesse des monstres : </b><span class="speed">10</span>x</div>
+  			</div>
+  	<!-- Bouton validé -->
+  			<div class="row">
+  				<div class="col-md-12 mt-3">
+  					<div class="offset-md-4 col-md-4 offset-md-4">
+		  				<input class="fight" type="button" class="btn btn-light btn-lg border border-light" value="FIGHT !">
+		  					<!--<input type="image" src="img_submit.gif" alt="Submit">-->
+		  			</div>
+  				</div>
+  			</div>
+	<!-- Descriptions des tours et monstres-->
+  			<div class="row">		
+	  			<div class="col-md-5 mr-n5 ml-5">
+	  				<!-- Descriptions des tours--> 
+	  				<div class="row mb-5">
+		  				<div class="col-md-12">
+							<h4>Tours</h4>
+		  				</div>
+		  			</div>
+	  				<div class="row ">
+		  				<div class="col-md-2">
+		  					<div class="row">
+		  						<div class="col-md-12"><img src="resources/Images/Tours/panda-basique.svg" alt=''></div>
+		  						<div class="card">
+								  <div class="card-body mt-n3 mb-n3 ml-n1">
+			  						<b>Time : </b><span class="maxlife">2</span>s<br>
+			  						<b>Dégats : </b><span class="maxlife">100</span><br>
+									<b>Coûts : </b><span class="money">30</span><img src="" alt="" class=""><br>
+									<b>Spé : </b><span class="levelmonsterspeed">Ultra</span>
+								  </div>
+								</div>
+		  					</div>
+		  					<div class="row mt-n3 mb-n3">
+		  						<div class="col-md-12"><img src="resources/Images/fleche.svg" alt=''></div>
+		  					</div>
+		  					<div class="row">
+		  						<div class="col-md-12"><img src="resources/Images/Tours/panda-bambou.svg" alt=''></div>
+		  						<div class="card">
+								  <div class="card-body mt-n3 mb-n3 ml-n1">
+			  						<b>Time</b> : <span class="maxlife">2</span>s<br>
+			  						<b>Dégats</b> : <span class="maxlife">100</span><br>
+									<b>Coûts</b> : <span class="money">30</span><img src="" alt="" class=""><br>
+									<b>Spé</b> : <span class="levelmonsterspeed">Ultra</span>
+								  </div>
+								</div>
+		  					</div>
+	  					</div>
+	  					<div class="offset-md-1 col-md-2">
+	  						<div class="row">
+		  						<div class="col-md-12"><img src="resources/Images/Tours/panda-sarbacane.svg" alt=''></div>
+		  						<div class="card">
+								  <div class="card-body mt-n3 mb-n3 ml-n1">
+			  						<b>Time : </b><span class="maxlife">2</span>s<br>
+			  						<b>Dégats : </b><span class="maxlife">100</span><br>
+									<b>Coûts : </b><span class="money">30</span><img src="" alt="" class=""><br>
+									<b>Spé : </b><span class="levelmonsterspeed">Ultra</span>
+								  </div>
+								</div>
+		  					</div>
+		  					<div class="row mt-n3 mb-n3">
+		  						<div class="col-md-12"><img src="resources/Images/fleche.svg" alt=''></div>
+		  					</div>
+		  					<div class="row">
+		  						<div class="col-md-12"><img src="resources/Images/Tours/panda-artifice.svg" alt=''></div>
+		  						<div class="card">
+								  <div class="card-body mt-n3 mb-n3 ml-n1">
+			  						<b>Time : </b><span class="maxlife">2</span>s<br>
+			  						<b>Dégats : </b><span class="maxlife">100</span><br>
+									<b>Coûts : </b><span class="money">30</span><img src="" alt="" class=""><br>
+									<b>Spé : </b><span class="levelmonsterspeed">Ultra</span>
+								  </div>
+								</div>
+		  					</div>
+	  					</div>
+	  					<div class="offset-md-1 col-md-2">
+	  						<div class="row">
+		  						<div class="col-md-12"><img src="resources/Images/Tours/panda-eau.svg" alt=''></div>
+		  						<div class="card">
+								  <div class="card-body mt-n3 mb-n3 ml-n1">
+			  						<b>Time : </b><span class="maxlife">2</span>s<br>
+			  						<b>Dégats : </b><span class="maxlife">100</span><br>
+									<b>Coûts : </b><span class="money">30</span><img src="" alt="" class=""><br>
+									<b>Spé : </b><span class="levelmonsterspeed">Ultra</span>
+								  </div>
+								</div>
+		  					</div>
+		  					<div class="row mt-n3 mb-n3">
+		  						<div class="col-md-12"><img src="resources/Images/fleche.svg" alt=''></div>
+		  					</div>
+		  					<div class="row">
+		  						<div class="col-md-12"><img src="resources/Images/Tours/panda-boue.svg" alt=''></div>
+		  						<div class="card">
+								  <div class="card-body mt-n3 mb-n3 ml-n1">
+			  						<b>Time : </b><span class="maxlife">2</span>s<br>
+			  						<b>Dégats : </b><span class="maxlife">100</span><br>
+									<b>Coûts : </b><span class="money">30</span><img src="" alt="" class=""><br>
+									<b>Spé : </b><span class="levelmonsterspeed">Ultra</span>
+								  </div>
+								</div>
+		  					</div>
+	  					</div>
+	  					<div class="offset-md-1 col-md-3 d-flex flex-column justify-content-center align-items-center">
+	  						<img src="resources/Images/Tours/panda-super.svg" alt=''>
+  							<div class="card">
+								  <div class="card-body mt-n3 mb-n3">
+			  						<b>Time : </b><span class="maxlife">10</span>s<br>
+			  						<b>Dégats : </b><span class="maxlife">100</span><br>
+									<b>Coûts : </b><span class="money">30</span><img src="" alt="" class=""><br>
+									<b>Spé : </b><span class="levelmonsterspeed">Ultra</span>
+								  </div>
+							</div>
+	  					</div>
+	  				</div>
+  				</div>
+  				<div class="col-md-2 d-flex flex-column justify-content-center align-items-center">
+  					<h1>VS</h1>
+  				</div>
+  				<div class="col-md-5">
+  					<div class="row">
+		  				<div class="col-md-12 mb-5">
+							<h4>Monstres</h4>
+		  				</div>
+		  			</div>
+		  			<div class="row mt-n3">
+		  			<!-- Descriptions des monstres--> 
+		  				<div class="col-md-3">
+		  					<div class="row">
+								<img src="resources/Images/Monstres/homme-troconneuse.svg" alt=''>
+		  						<div class="card">
+								  	<div class="card-body mt-n3 mb-n3">
+				  						<b>HP : </b><span class="maxlife">2</span>s<br>
+				  						<b>Vitesse : </b><span class="levelmonsterspeed">100</span><br>
+										<b>Rapporte : </b><span class="moneykill">30</span><img src="" alt="" class=""><br>
+										<b>Spé : </b><span class="specialite">Ultra</span>
+									</div>
+								</div>
+		  					</div>
+		  					<div class="row">
+		  						<img src="resources/Images/Monstres/homme-torche.svg" alt=''>
+		  						<div class="card">
+								  	<div class="card-body mt-n3 mb-n3">
+				  						<b>HP : </b><span class="maxlife">2</span>s<br>
+				  						<b>Vitesse : </b><span class="levelmonsterspeed">100</span><br>
+										<b>Rapporte : </b><span class="moneykill">30</span><img src="" alt="" class=""><br>
+										<b>Spé : </b><span class="specialite">Ultra</span>
+									</div>
+								</div>
+		  					</div>
+	  					</div>
+	  					<div class="offset-md-1 col-md-3">
+	  						<div class="row">
+		  						<img src="resources/Images/Monstres/homme-bulldozer.svg" alt='' class="ml-2">
+		  						<div class="card">
+								  	<div class="card-body mt-n3 mb-n3">
+				  						<b>HP : </b><span class="maxlife">2</span>s<br>
+				  						<b>Vitesse : </b><span class="levelmonsterspeed">100</span><br>
+										<b>Rapporte : </b><span class="moneykill">30</span><img src="" alt="" class=""><br>
+										<b>Spé : </b><span class="specialite">Ultra</span>
+									</div>
+								</div>
+		  					</div>
+		  					<div class="row">
+		  						<img src="resources/Images/Monstres/homme-bombardier.svg" alt=''  class="ml-2">
+		  						<div class="card">
+									 <div class="card-body mt-n3 mb-n3">
+				  						<b>HP : </b><span class="maxlife">2</span>s<br>
+				  						<b>Vitesse : </b><span class="levelmonsterspeed">100</span><br>
+										<b>Rapporte : </b><span class="moneykill">30</span><img src="" alt="" class=""><br>
+										<b>Spé : </b><span class="specialite">Ultra</span>
+									</div>
+								</div>
+		  					</div>
+	  					</div>
+	  					<div class="offset-md-1 col-md-4 d-flex flex-column justify-content-center align-items-center">
+	  						<img src="resources/Images/Monstres/homme-businessman.svg" alt=''  class="ml-n5">
+  							<div class="card">
+								<div class="card-body mt-n3 mb-n3">
+			  						<b>HP : </b><span class="maxlife">2</span>s<br>
+			  						<b>Vitesse : </b><span class="levelmonsterspeed">100</span><br>
+									<b>Rapporte : </b><span class="moneykill">30</span><img src="" alt="" class=""><br>
+									<b>Spé : </b><span class="specialite">Ultra</span>
+								</div>
+							</div>
+	  					</div>
+	  				</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
+
 <!-- Partie jeu --> 
-	<div class="container-fluid gamepage">
+	<div id="jeu" class="container-fluid">
 		<div class="col-md-12">
 			<div class="game">
 				<div class="infos">
