@@ -8,10 +8,11 @@ body {
 }
 
 .game {
-	/*width: 2000px;*/
-	/*height: 1500px;*/
+	margin-left:-20px;
+	width: 100vw;
+	height: 100vh;
 	z-index: -5;
-	/*background: url('resources/game.jpg') no-repeat;*/
+	background: url('../resources/Images/Textures/herbe.png') repeat;
 }
 
 .game .infos {
@@ -20,7 +21,8 @@ body {
 	width: 300px;
 	height: 50px;
 	right: 0px;
-	background: url('resources/Images/Textures/parcours.png');
+	color:white;
+	background-color: rgba(100,100,100,0.3);
 	z-index: 1;
 	text-align: center;
 }
@@ -87,7 +89,8 @@ body {
 
 .game .parcours div {
 	position: absolute;
-	background-color: #b87306;
+	margin-left:20px;
+	background: url('../resources/Images/Textures/parcours.png') repeat;
 	opacity: 1;
 }
 
