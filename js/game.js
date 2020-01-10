@@ -9,7 +9,7 @@ $(function() {
 	var	Player = {
 			money: 600,
 			life : 5,
-			speed: 5, // 10 = fast; 50 = normal mode
+			speed: 5, // 10 = fast; 5 = normal mode
 			time : 0, // time (in sec) before monsters move
 			level: 1,
 			bestScore :0,
@@ -130,6 +130,16 @@ function startGame(Player, Parcours, monsters, towers) {
 	}, 1000);
 }
 
+function difficulty(Player, Parcours, monsters, towers) {
+	if($('.difficulteinfo span.life'))==($('#option1')){
+		Player.life=10;
+		Player.money=100;
+		Player.speed=5;
+		$('.difficulteinfo span.life').text(Player.life);
+		$('.difficulteinfo span.money').text(Player.money);
+		$('.difficulteinfo span.speed').text(Player.speed);
+	}
+}
 // ----------------------
 // -- FUNCTIONS OTHERS --
 // ----------------------
