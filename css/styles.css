@@ -15,6 +15,9 @@ body {
 	font-size: 4em;
 	margin: 50px;
 }
+.infoaccueil img{
+	width: 20%;
+}
 .container-fluid {
 	margin: 0px;
 	padding: 0px;
